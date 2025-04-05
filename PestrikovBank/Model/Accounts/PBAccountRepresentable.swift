@@ -7,10 +7,10 @@
 
 import Foundation
 
-protocol PBAccountRepresentable {
+public protocol PBAccountRepresentable: Identifiable {
     var id: UUID { get }
     var balance: Decimal { get }
     var currency: String { get }
-    var cards: [PBCardRepresentable] { get }
-    var transactions: [PBTransactionRepresentable] { get }
+    var cards: [any PBCardRepresentable] { get }
+    var transactions: [any PBTransactionRepresentable] { get }
 }

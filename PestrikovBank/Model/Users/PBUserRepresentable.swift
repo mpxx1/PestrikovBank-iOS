@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol PBUserRepresentable {
+public protocol PBUserRepresentable: Identifiable {
     var id: Int64 { get }
     var email: String? { get }
     var phoneNumber: String? { get }
-    var accounts: [PBAccountRepresentable] { get }
+    var accounts: [any PBAccountRepresentable] { get }
     var firstName: String { get }
     var lastName: String { get }
     var avatarURL: URL? { get }
