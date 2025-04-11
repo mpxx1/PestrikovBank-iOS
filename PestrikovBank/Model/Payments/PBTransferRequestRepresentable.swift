@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol PBTransferRequestRepresentable {
+public protocol PBTransferRequestRepresentable {
     var sourceAccountId: UUID { get }
     var destinationCardNumber: String { get }
     var amount: Decimal { get }

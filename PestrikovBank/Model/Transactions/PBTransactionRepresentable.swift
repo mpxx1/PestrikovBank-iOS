@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol PBTransactionRepresentable {
+public protocol PBTransactionRepresentable: Identifiable {
     var id: Int64 { get }
     var sourceUserId: Int64 { get }
     var destinationUserId: Int64 { get }

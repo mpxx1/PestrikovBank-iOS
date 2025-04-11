@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol PBExchangeRateRepresentable {
+public protocol PBExchangeRateRepresentable {
     var sourceCurrency: String { get }
     var destinationCurrency: String { get }
     var rate: Decimal { get }

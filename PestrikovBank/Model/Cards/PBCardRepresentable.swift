@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol PBCardRepresentable {
-    var cardNumber: String { get }
+public protocol PBCardRepresentable: Identifiable {
+    var id: String { get }  // card number
     var expirationDate: Date { get }
 }
