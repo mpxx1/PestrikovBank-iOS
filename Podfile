@@ -6,6 +6,7 @@ target 'PestrikovBank' do
   use_frameworks!
 
   # Pods for PestrikovBank
+  pod 'RouteComposer'
 
   target 'PestrikovBankTests' do
     inherit! :search_paths
