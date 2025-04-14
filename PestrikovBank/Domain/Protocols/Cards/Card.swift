@@ -7,7 +7,8 @@
 
 import Foundation
 
-public protocol PBCardRepresentable: Identifiable {
-    var id: String { get }  // card number
+public protocol Card: Identifiable {
+    typealias Identifier = String   // card number
+    var id: Identifier { get }
     var expirationDate: Date { get }
 }
