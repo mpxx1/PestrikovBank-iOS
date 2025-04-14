@@ -1,16 +1,54 @@
 PODS:
+  - DivKit (31.11.0):
+    - DivKit_LayoutKit (= 31.11.0)
+    - DivKit_Serialization (= 31.11.0)
+    - VGSL (~> 6.22)
+  - DivKit_LayoutKit (31.11.0):
+    - DivKit_LayoutKitInterface (= 31.11.0)
+    - VGSL (~> 6.22)
+  - DivKit_LayoutKitInterface (31.11.0):
+    - VGSL (~> 6.22)
+  - DivKit_Serialization (31.11.0):
+    - VGSL (~> 6.22)
   - RouteComposer (2.11.1)
+  - VGSL (6.28.0):
+    - VGSLFundamentals (= 6.28.0)
+    - VGSLNetworking (= 6.28.0)
+    - VGSLUI (= 6.28.0)
+  - VGSLFundamentals (6.28.0)
+  - VGSLNetworking (6.28.0):
+    - VGSLFundamentals (= 6.28.0)
+    - VGSLUI (= 6.28.0)
+  - VGSLUI (6.28.0):
+    - VGSLFundamentals (= 6.28.0)
 
 DEPENDENCIES:
+  - DivKit
   - RouteComposer
 
 SPEC REPOS:
   trunk:
+    - DivKit
+    - DivKit_LayoutKit
+    - DivKit_LayoutKitInterface
+    - DivKit_Serialization
     - RouteComposer
+    - VGSL
+    - VGSLFundamentals
+    - VGSLNetworking
+    - VGSLUI
 
 SPEC CHECKSUMS:
+  DivKit: 8c8637038a7303a7a006c32ef87f248e50d234be
+  DivKit_LayoutKit: e2cfb72ffbc53c9ca080d2a2ad70e1eb6977a8c4
+  DivKit_LayoutKitInterface: ffbab1f47c62a018f642f50678fef718929e7e7f
+  DivKit_Serialization: 80567942f57d8b7e41a7fb23077339771a2e223b
   RouteComposer: eb0d97150affb8d5e4a220cd7281b9382060e2f8
+  VGSL: 459a7561a2002f9698e58cacfa2888708010ba78
+  VGSLFundamentals: 55fbbcdf3073dc2384905017f8e2a43fca1f3707
+  VGSLNetworking: ef1ee8f8e2632aaeb742bc576f9dd881e34e0db6
+  VGSLUI: 3e1966b09a48dd4bd874fee3b29948e8a5c449ee
 
-PODFILE CHECKSUM: 6bbf8ed61e4c85a52e78796797dfd640946023bf
+PODFILE CHECKSUM: 44f30d4cfa7394962f310f3a549b1f8ce274e96f
 
 COCOAPODS: 1.16.2

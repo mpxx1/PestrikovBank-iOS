@@ -176,10 +176,26 @@ code_sign_if_enabled() {
 }
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/DivKit/DivKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/DivKit_LayoutKit/LayoutKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/DivKit_LayoutKitInterface/LayoutKitInterface.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/DivKit_Serialization/Serialization.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RouteComposer/RouteComposer.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/VGSL/VGSL.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/VGSLFundamentals/VGSLFundamentals.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/VGSLNetworking/VGSLNetworking.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/VGSLUI/VGSLUI.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/DivKit/DivKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/DivKit_LayoutKit/LayoutKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/DivKit_LayoutKitInterface/LayoutKitInterface.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/DivKit_Serialization/Serialization.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RouteComposer/RouteComposer.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/VGSL/VGSL.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/VGSLFundamentals/VGSLFundamentals.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/VGSLNetworking/VGSLNetworking.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/VGSLUI/VGSLUI.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

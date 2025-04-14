@@ -1,2 +1,10 @@
 ${PODS_ROOT}/Target Support Files/Pods-PestrikovBank-PestrikovBankUITests/Pods-PestrikovBank-PestrikovBankUITests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/DivKit/DivKit.framework
+${BUILT_PRODUCTS_DIR}/DivKit_LayoutKit/LayoutKit.framework
+${BUILT_PRODUCTS_DIR}/DivKit_LayoutKitInterface/LayoutKitInterface.framework
+${BUILT_PRODUCTS_DIR}/DivKit_Serialization/Serialization.framework
 ${BUILT_PRODUCTS_DIR}/RouteComposer/RouteComposer.framework
+${BUILT_PRODUCTS_DIR}/VGSL/VGSL.framework
+${BUILT_PRODUCTS_DIR}/VGSLFundamentals/VGSLFundamentals.framework
+${BUILT_PRODUCTS_DIR}/VGSLNetworking/VGSLNetworking.framework
+${BUILT_PRODUCTS_DIR}/VGSLUI/VGSLUI.framework
