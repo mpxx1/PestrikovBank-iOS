@@ -22,13 +22,29 @@ public final class LoginViewModelImpl {
     
     var isValidPhoneNumber: AnyPublisher<Bool, Never> {
         $phoneNumber
-            .map { $0.isValidPhoneNumber() }
-            .eraseToAnyPublisher()
+            .map {
+                let ans = $0.isValidPhoneNumber()
+                if ans {
+                    print("phone number is valid")
+                } else {
+                    print("phone not valid")
+                }
+                
+                return ans
+            }
+            .eraseToAnyPublisher()        
     }
     
     var isValidSecret: AnyPublisher<Bool, Never> {
         $secret
-            .map { !$0.isEmpty }
+            .map {
+                let ans = !$0.isEmpty
+                if ans {
+                    print("secret is valid")
+                }
+                
+                return ans
+            }
             .eraseToAnyPublisher()
     }
     
@@ -49,9 +65,8 @@ public final class LoginViewModelImpl {
             .async { [weak self] in
                 
                 guard let self else { return }
-                let result = self.isCorrectLogin()
                 
-                switch result {
+                switch self.isCorrectLogin() {
                 case .success:
                     self.state = .succeeded
                 case .failure(let error):

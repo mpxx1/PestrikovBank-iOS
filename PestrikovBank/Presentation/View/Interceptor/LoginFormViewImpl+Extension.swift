@@ -143,9 +143,20 @@ final class LoginFormViewImpl: UIView {
 }
 
 extension LoginFormViewImpl: UITextFieldDelegate {
-    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    public func textField(
+        _ textField: UITextField,
+        shouldChangeCharactersIn range: NSRange,
+        replacementString string: String
+    ) -> Bool {
         let fullString = (textField.text ?? "") + string
-        textField.text = format(phoneNumber: fullString, shouldRemoveLastDigit: range.length == 1)
+        let formatted = format(
+            phoneNumber: fullString,
+            shouldRemoveLastDigit: range.length == 1
+        )
+        
+        textField.text = formatted
+        textField.sendActions(for: .editingChanged)
+        
         return false
     }
 }

@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-public final class LoginViewControllerImpl: UIViewController, UITextFieldDelegate {
+public final class LoginViewControllerImpl: UIViewController {
     
     private var loginForm: LoginFormViewImpl
     private var viewModel: LoginViewModelImpl
@@ -33,30 +33,33 @@ public final class LoginViewControllerImpl: UIViewController, UITextFieldDelegat
     
     public override func viewDidLoad() {
         super.viewDidLoad()
+        
         backgroundImageView.frame = view.bounds
         view.addSubview(backgroundImageView)
-        updateBackgroundImage()
         view.addSubview(loginForm)
+        updateBackgroundImage()
         
+        backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
         loginForm.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            backgroundImageView.topAnchor.constraint(equalTo: view.topAnchor),
+            backgroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            backgroundImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            backgroundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+
         NSLayoutConstraint.activate([
             loginForm.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             loginForm.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             loginForm.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             loginForm.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+        view.sendSubviewToBack(backgroundImageView)
         
-        loginForm.phoneField.addTarget(self,
-            action: #selector(textDidChange(_:)),
-            for: .editingChanged)
+        loginForm.phoneField.delegate = loginForm
         
         bindForm()
-    }
-    
-    public override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        backgroundImageView.frame = view.bounds
-        loginForm.frame = view.bounds
     }
     
     public override func traitCollectionDidChange(
@@ -76,20 +79,36 @@ public final class LoginViewControllerImpl: UIViewController, UITextFieldDelegat
     }
     
     private func bindForm() {
+        loginForm
+            .phoneField
+            .publisher(for: .editingChanged)
+            .compactMap { ($0 as! UITextField).text }
+            .assign(to: \.phoneNumber, on: viewModel)
+            .store(in: &cancellables)
         
-        NotificationCenter
-            .default
-            .publisher(for: UITextField.textDidChangeNotification, object: loginForm.passwordField)
-            .map { ($0.object as! UITextField).text ?? "" }
+        loginForm
+            .passwordField
+            .publisher(for: .editingChanged)
+            .compactMap { ($0 as! UITextField).text ?? "" }
             .assign(to: \.secret, on: viewModel)
             .store(in: &cancellables)
+        
+        loginForm
+            .loginButton
+            .addTarget(
+            self,
+            action: #selector(loginTapped),
+            for: .touchUpInside
+        )
 
         viewModel
             .isLoginEnabled
             .assign(to: \.isEnabled, on: loginForm.loginButton)
             .store(in: &cancellables)
         
-        viewModel.$state
+        viewModel
+            .$state
+            .receive(on: DispatchQueue.main)
             .sink { [weak self] state in
                                 
                 switch state {
@@ -112,22 +131,8 @@ public final class LoginViewControllerImpl: UIViewController, UITextFieldDelegat
         alert.addAction(UIAlertAction(title: "ОК", style: .default))
         present(alert, animated: true)
     }
-    
-    @objc private func textDidChange(_ tf: UITextField) {
-        let rawText = tf.text ?? ""
 
-        if tf === loginForm.phoneField {
-            let formatted = loginForm.format(
-                phoneNumber: rawText,
-                shouldRemoveLastDigit: false
-            )
-            loginForm.phoneField.text = formatted
-            viewModel.phoneNumber = formatted
-        }
-
-        if tf === loginForm.passwordField {
-            viewModel.secret = rawText
-        }
+    @objc private func loginTapped() {
+        viewModel.submitLogin()
     }
-
 }
