@@ -80,6 +80,6 @@ public final class LoginViewModelImpl {
         // create creds object
         // pass it to async servier request use case
         
-        return .success(())
+        return .failure(PBError.authError("test"))
     }
 }

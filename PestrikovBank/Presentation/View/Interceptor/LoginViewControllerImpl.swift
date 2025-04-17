@@ -95,11 +95,11 @@ public final class LoginViewControllerImpl: UIViewController {
         
         loginForm
             .loginButton
-            .addTarget(
-            self,
-            action: #selector(loginTapped),
-            for: .touchUpInside
-        )
+            .publisher(for: .touchUpInside)
+            .sink { [weak self] _ in
+                self?.viewModel.submitLogin()
+            }
+            .store(in: &cancellables)
 
         viewModel
             .isLoginEnabled
@@ -130,9 +130,5 @@ public final class LoginViewControllerImpl: UIViewController {
         let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "ОК", style: .default))
         present(alert, animated: true)
-    }
-
-    @objc private func loginTapped() {
-        viewModel.submitLogin()
     }
 }
