@@ -1,13 +1,5 @@
-ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
 CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/DivKit" "${PODS_CONFIGURATION_BUILD_DIR}/DivKit_LayoutKit" "${PODS_CONFIGURATION_BUILD_DIR}/DivKit_LayoutKitInterface" "${PODS_CONFIGURATION_BUILD_DIR}/DivKit_Serialization" "${PODS_CONFIGURATION_BUILD_DIR}/RouteComposer" "${PODS_CONFIGURATION_BUILD_DIR}/VGSL" "${PODS_CONFIGURATION_BUILD_DIR}/VGSLFundamentals" "${PODS_CONFIGURATION_BUILD_DIR}/VGSLNetworking" "${PODS_CONFIGURATION_BUILD_DIR}/VGSLUI"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/DivKit/DivKit.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/DivKit_LayoutKit/LayoutKit.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/DivKit_LayoutKitInterface/LayoutKitInterface.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/DivKit_Serialization/Serialization.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/RouteComposer/RouteComposer.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/VGSL/VGSL.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/VGSLFundamentals/VGSLFundamentals.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/VGSLNetworking/VGSLNetworking.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/VGSLUI/VGSLUI.framework/Headers"
-LD_RUNPATH_SEARCH_PATHS = $(inherited) /usr/lib/swift "$(PLATFORM_DIR)/Developer/Library/Frameworks" '@executable_path/Frameworks' '@loader_path/Frameworks'
-LIBRARY_SEARCH_PATHS = $(inherited) "${TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}" /usr/lib/swift
-OTHER_LDFLAGS = $(inherited) -framework "DivKit" -framework "LayoutKit" -framework "LayoutKitInterface" -framework "RouteComposer" -framework "Serialization" -framework "UIKit" -framework "VGSL" -framework "VGSLFundamentals" -framework "VGSLNetworking" -framework "VGSLUI"
-OTHER_MODULE_VERIFIER_FLAGS = $(inherited) "-F${PODS_CONFIGURATION_BUILD_DIR}/DivKit" "-F${PODS_CONFIGURATION_BUILD_DIR}/DivKit_LayoutKit" "-F${PODS_CONFIGURATION_BUILD_DIR}/DivKit_LayoutKitInterface" "-F${PODS_CONFIGURATION_BUILD_DIR}/DivKit_Serialization" "-F${PODS_CONFIGURATION_BUILD_DIR}/RouteComposer" "-F${PODS_CONFIGURATION_BUILD_DIR}/VGSL" "-F${PODS_CONFIGURATION_BUILD_DIR}/VGSLFundamentals" "-F${PODS_CONFIGURATION_BUILD_DIR}/VGSLNetworking" "-F${PODS_CONFIGURATION_BUILD_DIR}/VGSLUI"
-OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.

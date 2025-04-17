@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		733AAA8CAD3E46B0AAA52234 /* Pods_PestrikovBankTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ECD44C8DB2DD2E6B8C6E7D4 /* Pods_PestrikovBankTests.framework */; };
-		F2E37BB8A97210961E2FBF79 /* Pods_PestrikovBank_PestrikovBankUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 061D825A1FE727EDC5D7F1CF /* Pods_PestrikovBank_PestrikovBankUITests.framework */; };
-		F536E51A4160DB25D1A36FF0 /* Pods_PestrikovBank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEF528A33117A8E5D10AD9A2 /* Pods_PestrikovBank.framework */; };
+		177FA3B8392965C4DE5E0E01 /* Pods_PestrikovBank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 036A841B3456C17B8CFA6B54 /* Pods_PestrikovBank.framework */; };
+		45FF3C731C8AD6E73136E9E7 /* Pods_PestrikovBankTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B37672122E3C08C625A73D /* Pods_PestrikovBankTests.framework */; };
+		FB47B9A2797D5FD615E5AB7E /* Pods_PestrikovBank_PestrikovBankUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2ED9FA3345BE01DE6181643 /* Pods_PestrikovBank_PestrikovBankUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,18 +30,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0004400131BADC6D6BEAC1B4 /* Pods-PestrikovBank-PestrikovBankUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PestrikovBank-PestrikovBankUITests.debug.xcconfig"; path = "Target Support Files/Pods-PestrikovBank-PestrikovBankUITests/Pods-PestrikovBank-PestrikovBankUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		061D825A1FE727EDC5D7F1CF /* Pods_PestrikovBank_PestrikovBankUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PestrikovBank_PestrikovBankUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		036A841B3456C17B8CFA6B54 /* Pods_PestrikovBank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PestrikovBank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CCA82432D944ADF00E6252B /* PestrikovBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PestrikovBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CCA82592D944AE000E6252B /* PestrikovBankTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PestrikovBankTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CCA82632D944AE000E6252B /* PestrikovBankUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PestrikovBankUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0EFE5FEE487BF02F9394A6C3 /* Pods-PestrikovBank-PestrikovBankUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PestrikovBank-PestrikovBankUITests.release.xcconfig"; path = "Target Support Files/Pods-PestrikovBank-PestrikovBankUITests/Pods-PestrikovBank-PestrikovBankUITests.release.xcconfig"; sourceTree = "<group>"; };
-		2ECD44C8DB2DD2E6B8C6E7D4 /* Pods_PestrikovBankTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PestrikovBankTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7CA3C9F1C301A4AB8A2FC99E /* Pods-PestrikovBankTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PestrikovBankTests.debug.xcconfig"; path = "Target Support Files/Pods-PestrikovBankTests/Pods-PestrikovBankTests.debug.xcconfig"; sourceTree = "<group>"; };
-		8AEC62434E324D353C1DD2FE /* Pods-PestrikovBankTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PestrikovBankTests.release.xcconfig"; path = "Target Support Files/Pods-PestrikovBankTests/Pods-PestrikovBankTests.release.xcconfig"; sourceTree = "<group>"; };
-		A80CA75055594270173EFDFF /* Pods-PestrikovBank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PestrikovBank.release.xcconfig"; path = "Target Support Files/Pods-PestrikovBank/Pods-PestrikovBank.release.xcconfig"; sourceTree = "<group>"; };
-		AEF528A33117A8E5D10AD9A2 /* Pods_PestrikovBank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PestrikovBank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C3493DEEDBAC84875FE60F02 /* Pods-PestrikovBank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PestrikovBank.debug.xcconfig"; path = "Target Support Files/Pods-PestrikovBank/Pods-PestrikovBank.debug.xcconfig"; sourceTree = "<group>"; };
+		41B37672122E3C08C625A73D /* Pods_PestrikovBankTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PestrikovBankTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D2764BD9C30F71C43AF52F6 /* Pods-PestrikovBank-PestrikovBankUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PestrikovBank-PestrikovBankUITests.release.xcconfig"; path = "Target Support Files/Pods-PestrikovBank-PestrikovBankUITests/Pods-PestrikovBank-PestrikovBankUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6A613062CF954AFCD2138BC1 /* Pods-PestrikovBankTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PestrikovBankTests.debug.xcconfig"; path = "Target Support Files/Pods-PestrikovBankTests/Pods-PestrikovBankTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9390C0F5FED8C293E51BD455 /* Pods-PestrikovBank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PestrikovBank.release.xcconfig"; path = "Target Support Files/Pods-PestrikovBank/Pods-PestrikovBank.release.xcconfig"; sourceTree = "<group>"; };
+		C24A3A631B3752CEDB8F98D1 /* Pods-PestrikovBank-PestrikovBankUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PestrikovBank-PestrikovBankUITests.debug.xcconfig"; path = "Target Support Files/Pods-PestrikovBank-PestrikovBankUITests/Pods-PestrikovBank-PestrikovBankUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C9AE6BF61CFAB9201B4652EA /* Pods-PestrikovBank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PestrikovBank.debug.xcconfig"; path = "Target Support Files/Pods-PestrikovBank/Pods-PestrikovBank.debug.xcconfig"; sourceTree = "<group>"; };
+		E2ED9FA3345BE01DE6181643 /* Pods_PestrikovBank_PestrikovBankUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PestrikovBank_PestrikovBankUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD5B42048051E92A72EC282E /* Pods-PestrikovBankTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PestrikovBankTests.release.xcconfig"; path = "Target Support Files/Pods-PestrikovBankTests/Pods-PestrikovBankTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -80,7 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F536E51A4160DB25D1A36FF0 /* Pods_PestrikovBank.framework in Frameworks */,
+				177FA3B8392965C4DE5E0E01 /* Pods_PestrikovBank.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,7 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				733AAA8CAD3E46B0AAA52234 /* Pods_PestrikovBankTests.framework in Frameworks */,
+				45FF3C731C8AD6E73136E9E7 /* Pods_PestrikovBankTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,7 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2E37BB8A97210961E2FBF79 /* Pods_PestrikovBank_PestrikovBankUITests.framework in Frameworks */,
+				FB47B9A2797D5FD615E5AB7E /* Pods_PestrikovBank_PestrikovBankUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,7 +111,7 @@
 				0CCA82662D944AE000E6252B /* PestrikovBankUITests */,
 				0CCA82442D944ADF00E6252B /* Products */,
 				9F86EA866C011C7E03857D27 /* Pods */,
-				9A3736FFAE06F87A380EB5A6 /* Frameworks */,
+				899E307105CBD74770F77A3E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,12 +125,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9A3736FFAE06F87A380EB5A6 /* Frameworks */ = {
+		899E307105CBD74770F77A3E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AEF528A33117A8E5D10AD9A2 /* Pods_PestrikovBank.framework */,
-				061D825A1FE727EDC5D7F1CF /* Pods_PestrikovBank_PestrikovBankUITests.framework */,
-				2ECD44C8DB2DD2E6B8C6E7D4 /* Pods_PestrikovBankTests.framework */,
+				036A841B3456C17B8CFA6B54 /* Pods_PestrikovBank.framework */,
+				E2ED9FA3345BE01DE6181643 /* Pods_PestrikovBank_PestrikovBankUITests.framework */,
+				41B37672122E3C08C625A73D /* Pods_PestrikovBankTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -138,12 +138,12 @@
 		9F86EA866C011C7E03857D27 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C3493DEEDBAC84875FE60F02 /* Pods-PestrikovBank.debug.xcconfig */,
-				A80CA75055594270173EFDFF /* Pods-PestrikovBank.release.xcconfig */,
-				0004400131BADC6D6BEAC1B4 /* Pods-PestrikovBank-PestrikovBankUITests.debug.xcconfig */,
-				0EFE5FEE487BF02F9394A6C3 /* Pods-PestrikovBank-PestrikovBankUITests.release.xcconfig */,
-				7CA3C9F1C301A4AB8A2FC99E /* Pods-PestrikovBankTests.debug.xcconfig */,
-				8AEC62434E324D353C1DD2FE /* Pods-PestrikovBankTests.release.xcconfig */,
+				C9AE6BF61CFAB9201B4652EA /* Pods-PestrikovBank.debug.xcconfig */,
+				9390C0F5FED8C293E51BD455 /* Pods-PestrikovBank.release.xcconfig */,
+				C24A3A631B3752CEDB8F98D1 /* Pods-PestrikovBank-PestrikovBankUITests.debug.xcconfig */,
+				5D2764BD9C30F71C43AF52F6 /* Pods-PestrikovBank-PestrikovBankUITests.release.xcconfig */,
+				6A613062CF954AFCD2138BC1 /* Pods-PestrikovBankTests.debug.xcconfig */,
+				FD5B42048051E92A72EC282E /* Pods-PestrikovBankTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -155,11 +155,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0CCA826C2D944AE000E6252B /* Build configuration list for PBXNativeTarget "PestrikovBank" */;
 			buildPhases = (
-				7FEDDCB192A211486D8457CD /* [CP] Check Pods Manifest.lock */,
+				09FF15DA1EE80BF9E853A564 /* [CP] Check Pods Manifest.lock */,
 				0CCA823F2D944ADF00E6252B /* Sources */,
 				0CCA82402D944ADF00E6252B /* Frameworks */,
 				0CCA82412D944ADF00E6252B /* Resources */,
-				05FDE0AD5DE44B59D4904D95 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -177,7 +176,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0CCA82712D944AE000E6252B /* Build configuration list for PBXNativeTarget "PestrikovBankTests" */;
 			buildPhases = (
-				488199F790B04070A83E02E2 /* [CP] Check Pods Manifest.lock */,
+				666FB8A84953BF4F7A41DB69 /* [CP] Check Pods Manifest.lock */,
 				0CCA82552D944AE000E6252B /* Sources */,
 				0CCA82562D944AE000E6252B /* Frameworks */,
 				0CCA82572D944AE000E6252B /* Resources */,
@@ -199,11 +198,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0CCA82742D944AE000E6252B /* Build configuration list for PBXNativeTarget "PestrikovBankUITests" */;
 			buildPhases = (
-				71EC06B0B878A4A6C52C5905 /* [CP] Check Pods Manifest.lock */,
+				FAC63819F523403E534D1C37 /* [CP] Check Pods Manifest.lock */,
 				0CCA825F2D944AE000E6252B /* Sources */,
 				0CCA82602D944AE000E6252B /* Frameworks */,
 				0CCA82612D944AE000E6252B /* Resources */,
-				C42AB45374C6C390EB83D863 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -226,7 +224,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1620;
-				LastUpgradeCheck = 1620;
+				LastUpgradeCheck = 1630;
 				TargetAttributes = {
 					0CCA82422D944ADF00E6252B = {
 						CreatedOnToolsVersion = 16.2;
@@ -247,6 +245,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = 0CCA823A2D944ADF00E6252B;
 			minimizedProjectReferenceProxies = 1;
@@ -287,72 +286,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		05FDE0AD5DE44B59D4904D95 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PestrikovBank/Pods-PestrikovBank-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PestrikovBank/Pods-PestrikovBank-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PestrikovBank/Pods-PestrikovBank-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		488199F790B04070A83E02E2 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-PestrikovBankTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		71EC06B0B878A4A6C52C5905 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-PestrikovBank-PestrikovBankUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7FEDDCB192A211486D8457CD /* [CP] Check Pods Manifest.lock */ = {
+		09FF15DA1EE80BF9E853A564 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -374,25 +308,48 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C42AB45374C6C390EB83D863 /* [CP] Embed Pods Frameworks */ = {
+		666FB8A84953BF4F7A41DB69 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PestrikovBank-PestrikovBankUITests/Pods-PestrikovBank-PestrikovBankUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PestrikovBank-PestrikovBankUITests/Pods-PestrikovBank-PestrikovBankUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PestrikovBankTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PestrikovBank-PestrikovBankUITests/Pods-PestrikovBank-PestrikovBankUITests-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FAC63819F523403E534D1C37 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PestrikovBank-PestrikovBankUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -437,7 +394,7 @@
 /* Begin XCBuildConfiguration section */
 		0CCA826D2D944AE000E6252B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C3493DEEDBAC84875FE60F02 /* Pods-PestrikovBank.debug.xcconfig */;
+			baseConfigurationReference = C9AE6BF61CFAB9201B4652EA /* Pods-PestrikovBank.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -445,14 +402,16 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PestrikovBank/Resorces/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Pestrikov;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.macao.PestrikovBank;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -463,7 +422,7 @@
 		};
 		0CCA826E2D944AE000E6252B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A80CA75055594270173EFDFF /* Pods-PestrikovBank.release.xcconfig */;
+			baseConfigurationReference = 9390C0F5FED8C293E51BD455 /* Pods-PestrikovBank.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -471,14 +430,16 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PestrikovBank/Resorces/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Pestrikov;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.macao.PestrikovBank;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -492,6 +453,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -555,6 +517,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -608,7 +571,7 @@
 		};
 		0CCA82722D944AE000E6252B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7CA3C9F1C301A4AB8A2FC99E /* Pods-PestrikovBankTests.debug.xcconfig */;
+			baseConfigurationReference = 6A613062CF954AFCD2138BC1 /* Pods-PestrikovBankTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -627,7 +590,7 @@
 		};
 		0CCA82732D944AE000E6252B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8AEC62434E324D353C1DD2FE /* Pods-PestrikovBankTests.release.xcconfig */;
+			baseConfigurationReference = FD5B42048051E92A72EC282E /* Pods-PestrikovBankTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -646,7 +609,7 @@
 		};
 		0CCA82752D944AE000E6252B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0004400131BADC6D6BEAC1B4 /* Pods-PestrikovBank-PestrikovBankUITests.debug.xcconfig */;
+			baseConfigurationReference = C24A3A631B3752CEDB8F98D1 /* Pods-PestrikovBank-PestrikovBankUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -663,7 +626,7 @@
 		};
 		0CCA82762D944AE000E6252B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0EFE5FEE487BF02F9394A6C3 /* Pods-PestrikovBank-PestrikovBankUITests.release.xcconfig */;
+			baseConfigurationReference = 5D2764BD9C30F71C43AF52F6 /* Pods-PestrikovBank-PestrikovBankUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
