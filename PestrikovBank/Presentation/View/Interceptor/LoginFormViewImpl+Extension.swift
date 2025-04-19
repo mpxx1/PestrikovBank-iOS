@@ -11,14 +11,14 @@ final class LoginFormViewImpl: UIView {
     
     public var phoneNumberFormatting: (String, Bool) -> String
     
-    public lazy var title: UILabel = {
+    public var title: UILabel = {
         let lbl = UILabel()
         lbl.text = "Welcome!"
         lbl.font = .systemFont(ofSize: 32, weight: .bold)
         return lbl
     }()
     
-    public lazy var phoneField: UITextField = {
+    public var phoneField: UITextField = {
         let tf = UITextField()
         tf.placeholder = "Phone"
         tf.keyboardType = .phonePad
@@ -26,14 +26,14 @@ final class LoginFormViewImpl: UIView {
         return tf
     }()
 
-    public lazy var passwordField: UITextField = {
+    public var passwordField: UITextField = {
         let tf = UITextField()
         tf.placeholder = "Password"
         tf.font = .systemFont(ofSize: 22)
         return tf
     }()
 
-    public lazy var loginButton: UIButton = {
+    public var loginButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.setTitle("Login", for: .normal)
         btn.isEnabled = false
@@ -46,7 +46,7 @@ final class LoginFormViewImpl: UIView {
         return btn
     }()
     
-    public lazy var signUpButton: UIButton = {
+    public var signUpButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.setTitle("Sign Up", for: .normal)
         if UIScreen.main.traitCollection.userInterfaceStyle == .dark {
@@ -58,18 +58,7 @@ final class LoginFormViewImpl: UIView {
         return btn
     }()
 
-    private lazy var stackView: UIStackView = {
-        let sv = UIStackView(arrangedSubviews: [
-            title,
-            phoneField,
-            passwordField,
-            loginButton,
-            signUpButton
-        ])
-        sv.axis = .vertical
-        sv.spacing = 30
-        return sv
-    }()
+    private var stackView: UIStackView!
     
     init(frame: CGRect, phoneNumberFormatting: @escaping (String, Bool) -> String) {
         self.phoneNumberFormatting = phoneNumberFormatting
@@ -80,6 +69,16 @@ final class LoginFormViewImpl: UIView {
     required init?(coder: NSCoder) { fatalError("Not supported") }
 
     private func setupLayout() {
+        stackView = UIStackView(arrangedSubviews: [
+            title,
+            phoneField,
+            passwordField,
+            loginButton,
+            signUpButton
+        ])
+        stackView.axis = .vertical
+        stackView.spacing = 30
+        
         addSubview(stackView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
