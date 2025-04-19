@@ -9,6 +9,8 @@ import UIKit
 
 final class LoginFormViewImpl: UIView {
     
+    public var phoneNumberFormatting: (String, Bool) -> String
+    
     public lazy var title: UILabel = {
         let lbl = UILabel()
         lbl.text = "Welcome!"
@@ -55,9 +57,6 @@ final class LoginFormViewImpl: UIView {
         btn.titleLabel!.font = UIFont(name: "Helvetica", size: 18)
         return btn
     }()
-    
-    private let maxNumberCount = 11
-    private let regex = try! NSRegularExpression(pattern: "[\\+\\s-\\(\\)]", options: .caseInsensitive)
 
     private lazy var stackView: UIStackView = {
         let sv = UIStackView(arrangedSubviews: [
@@ -71,44 +70,15 @@ final class LoginFormViewImpl: UIView {
         sv.spacing = 30
         return sv
     }()
-
-    override init(frame: CGRect) {
+    
+    init(frame: CGRect, phoneNumberFormatting: @escaping (String, Bool) -> String) {
+        self.phoneNumberFormatting = phoneNumberFormatting
         super.init(frame: frame)
         setupLayout()
     }
 
     required init?(coder: NSCoder) { fatalError("Not supported") }
-    
-    public func format(phoneNumber: String, shouldRemoveLastDigit: Bool) -> String {
-        guard !(shouldRemoveLastDigit && phoneNumber.count <= 2) else { return "+" }
-        
-        let range = NSString(string: phoneNumber).range(of: phoneNumber)
-        var number = regex.stringByReplacingMatches(in: phoneNumber, options: [], range: range, withTemplate: "")
-        
-        if number.count > maxNumberCount {
-            let maxIndex = number.index(number.startIndex, offsetBy: maxNumberCount)
-            number = String(number[number.startIndex..<maxIndex])
-        }
-        
-        if shouldRemoveLastDigit {
-            let maxIndex = number.index(number.startIndex, offsetBy: number.count - 1)
-            number = String(number[number.startIndex..<maxIndex])
-        }
-        
-        let maxIndex = number.index(number.startIndex, offsetBy: number.count)
-        let regRange = number.startIndex..<maxIndex
-        
-        if number.count < 7 {
-            let pattern = "(\\d)(\\d{3})(\\d+)"
-            number = number.replacingOccurrences(of: pattern, with: "$1 ($2) $3", options: .regularExpression, range: regRange)
-        } else {
-            let pattern = "(\\d)(\\d{3})(\\d{3})(\\d{2})(\\d+)"
-            number = number.replacingOccurrences(of: pattern, with: "$1 ($2) $3-$4-$5", options: .regularExpression, range: regRange)
-        }
-        
-        return "+" + number
-    }
-    
+
     private func setupLayout() {
         addSubview(stackView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -149,9 +119,9 @@ extension LoginFormViewImpl: UITextFieldDelegate {
         replacementString string: String
     ) -> Bool {
         let fullString = (textField.text ?? "") + string
-        let formatted = format(
-            phoneNumber: fullString,
-            shouldRemoveLastDigit: range.length == 1
+        let formatted = phoneNumberFormatting(
+            fullString,
+            range.length == 1
         )
         
         textField.text = formatted

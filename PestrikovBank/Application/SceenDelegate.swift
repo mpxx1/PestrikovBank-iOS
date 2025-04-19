@@ -19,11 +19,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         self.window = UIWindow(windowScene: windowScene)
         
+        let model = LoginViewModelImpl()
         window?.rootViewController = LoginViewControllerImpl(
             loginForm: LoginFormViewImpl(
-                frame: window?.bounds ?? UIScreen.main.bounds
+                frame: window?.bounds ?? UIScreen.main.bounds,
+                phoneNumberFormatting: model.phoneFormat()
             ),
-            viewModel: LoginViewModelImpl()
+            viewModel: model
         )
         window?.makeKeyAndVisible()
     }

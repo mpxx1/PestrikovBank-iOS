@@ -16,7 +16,7 @@ public final class LoginViewControllerImpl: UIViewController {
     
     private let backgroundImageView: UIImageView = {
         var imageName: String
-        let imageView = UIImageView(image: UIImage(named: "LoginLight"))
+        let imageView = UIImageView(image: UIImage(named: "LoginLightBackground"))
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
@@ -73,8 +73,8 @@ public final class LoginViewControllerImpl: UIViewController {
     
     private func updateBackgroundImage() {
         let name = traitCollection.userInterfaceStyle == .dark
-            ? "LoginDark"
-            : "LoginLight"
+            ? "LoginDarkBackground"
+            : "LoginLightBackground"
         backgroundImageView.image = UIImage(named: name)
     }
     
