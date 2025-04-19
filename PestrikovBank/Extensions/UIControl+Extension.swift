@@ -27,7 +27,7 @@ private struct UIControlPublisher<Control: UIControl>: Publisher {
         subscriber.receive(subscription: subscription)
     }
 
-    private final class Subscription<S: Subscriber, Control: UIControl>: Combine.Subscription
+    private final class Subscription<S: Subscriber>: Combine.Subscription
     where S.Input == Control, S.Failure == Never {
         private var subscriber: S?
         weak private var control: Control?
