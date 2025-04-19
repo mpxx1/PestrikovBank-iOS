@@ -8,7 +8,7 @@
 import Foundation
 
 public struct AutAuthTokensImpl: AuthTokens {
-    private(set) public var accessToken: String
-    private(set) public var refreshToken: String
-    private(set) public var expiresAt: Date
+    public let accessToken: String
+    public let refreshToken: String
+    public let expiresAt: Date
 }

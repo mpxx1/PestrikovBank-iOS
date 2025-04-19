@@ -22,29 +22,13 @@ public final class LoginViewModelImpl {
     
     var isValidPhoneNumber: AnyPublisher<Bool, Never> {
         $phoneNumber
-            .map {
-                let ans = $0.isValidPhoneNumber()
-                if ans {
-                    print("phone number is valid")
-                } else {
-                    print("phone not valid")
-                }
-                
-                return ans
-            }
-            .eraseToAnyPublisher()        
+            .map { $0.isValidPhoneNumber() }
+            .eraseToAnyPublisher()
     }
     
     var isValidSecret: AnyPublisher<Bool, Never> {
         $secret
-            .map {
-                let ans = !$0.isEmpty
-                if ans {
-                    print("secret is valid")
-                }
-                
-                return ans
-            }
+            .map { !$0.isEmpty }
             .eraseToAnyPublisher()
     }
     

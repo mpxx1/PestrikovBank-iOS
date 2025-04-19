@@ -9,14 +9,14 @@ import UIKit
 
 final class LoginFormViewImpl: UIView {
     
-    public let title: UILabel = {
+    public lazy var title: UILabel = {
         let lbl = UILabel()
         lbl.text = "Welcome!"
         lbl.font = .systemFont(ofSize: 32, weight: .bold)
         return lbl
     }()
     
-    public let phoneField: UITextField = {
+    public lazy var phoneField: UITextField = {
         let tf = UITextField()
         tf.placeholder = "Phone"
         tf.keyboardType = .phonePad
@@ -24,14 +24,14 @@ final class LoginFormViewImpl: UIView {
         return tf
     }()
 
-    public let passwordField: UITextField = {
+    public lazy var passwordField: UITextField = {
         let tf = UITextField()
         tf.placeholder = "Password"
         tf.font = .systemFont(ofSize: 22)
         return tf
     }()
 
-    public let loginButton: UIButton = {
+    public lazy var loginButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.setTitle("Login", for: .normal)
         btn.isEnabled = false
@@ -44,7 +44,7 @@ final class LoginFormViewImpl: UIView {
         return btn
     }()
     
-    public let signUpButton: UIButton = {
+    public lazy var signUpButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.setTitle("Sign Up", for: .normal)
         if UIScreen.main.traitCollection.userInterfaceStyle == .dark {

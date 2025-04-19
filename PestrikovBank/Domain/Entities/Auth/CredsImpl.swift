@@ -6,6 +6,6 @@
 //
 
 public struct CredsImpl: Creds {
-    private(set) public var login: String
-    private(set) public var secret: String
+    public let login: String
+    public let secret: String
 }
