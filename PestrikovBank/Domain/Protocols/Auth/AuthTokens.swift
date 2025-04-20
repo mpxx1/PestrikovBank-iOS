@@ -10,5 +10,4 @@ import Foundation
 public protocol AuthTokens {
     var accessToken: String { get }
     var refreshToken: String { get }
-    var expiresAt: Date { get }
 }

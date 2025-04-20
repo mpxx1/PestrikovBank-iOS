@@ -10,5 +10,4 @@ import Foundation
 public struct AutAuthTokensImpl: AuthTokens {
     public let accessToken: String
     public let refreshToken: String
-    public let expiresAt: Date
 }
