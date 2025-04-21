@@ -21,13 +21,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         self.window = UIWindow(windowScene: windowScene)
         
-        let appCoordinator = appDIContainer
-            .routeCoordinatorDIContainer
-            .appCooridnator
+        let appCoordinator = AppCoordinator(
+            window: self.window,
+            loginCoordinator: appDIContainer.routeCoordinatorDIContainer.loginCooridnator,
+            mainCoordinator: appDIContainer.routeCoordinatorDIContainer.mainCoordinator
+        )
         appCoordinator.start()
         
         self.appCoordinator = appCoordinator
-        self.window?.rootViewController = appCoordinator.rootViewController
         window?.makeKeyAndVisible()
     }
 }

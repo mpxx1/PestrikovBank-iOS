@@ -1,19 +1,19 @@
 //
-//  LoginFormViewImpl.swift
+//  SignUpFormViewImpl+Extension.swift
 //  PestrikovBank
 //
-//  Created by m on 17.04.2025.
+//  Created by m on 21.04.2025.
 //
 
 import UIKit
 
-final class LoginFormViewImpl: UIView {
+public final class SignUpFormView: UIView {
     
     public var phoneNumberFormatting: (String, Bool) -> String
     
     public var title: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Login"
+        lbl.text = "Sign Up"
         lbl.font = .systemFont(ofSize: 32, weight: .bold)
         return lbl
     }()
@@ -32,23 +32,18 @@ final class LoginFormViewImpl: UIView {
         tf.font = .systemFont(ofSize: 22)
         return tf
     }()
-
-    public var loginButton: UIButton = {
-        let btn = UIButton(type: .system)
-        btn.setTitle("Login", for: .normal)
-        btn.isEnabled = false
-        if UIScreen.main.traitCollection.userInterfaceStyle == .dark {
-            btn.tintColor = .white
-        } else {
-            btn.tintColor = #colorLiteral(red: 0.5440881252, green: 0, blue: 0, alpha: 1)
-        }
-        btn.titleLabel!.font = UIFont(name: "Helvetica", size: 18)
-        return btn
+    
+    public var confirmPasswordField: UITextField = {
+        let tf = UITextField()
+        tf.placeholder = "Confirm password"
+        tf.font = .systemFont(ofSize: 22)
+        return tf
     }()
     
     public var signUpButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.setTitle("Sign Up", for: .normal)
+        btn.isEnabled = false
         if UIScreen.main.traitCollection.userInterfaceStyle == .dark {
             btn.tintColor = .white
         } else {
@@ -67,13 +62,22 @@ final class LoginFormViewImpl: UIView {
     }
 
     required init?(coder: NSCoder) { fatalError("Not supported") }
+    
+    public override func traitCollectionDidChange(
+        _ previousTraitCollection: UITraitCollection?
+    ) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        if previousTraitCollection?.userInterfaceStyle != traitCollection.userInterfaceStyle {
+            updateButtonColors()
+        }
+    }
 
     private func setupLayout() {
         stackView = UIStackView(arrangedSubviews: [
             title,
             phoneField,
             passwordField,
-            loginButton,
+            confirmPasswordField,
             signUpButton
         ])
         stackView.axis = .vertical
@@ -89,14 +93,6 @@ final class LoginFormViewImpl: UIView {
         ])
     }
 
-    
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-        if previousTraitCollection?.userInterfaceStyle != traitCollection.userInterfaceStyle {
-            updateButtonColors()
-        }
-    }
-
     private func updateButtonColors() {
         let tint: UIColor
         if traitCollection.userInterfaceStyle == .dark {
@@ -105,13 +101,11 @@ final class LoginFormViewImpl: UIView {
             tint = #colorLiteral(red: 0.5440881252, green: 0, blue: 0, alpha: 1)
         }
 
-        [loginButton, signUpButton].forEach {
-            $0.tintColor = tint
-        }
+        signUpButton.tintColor = tint
     }
 }
 
-extension LoginFormViewImpl: UITextFieldDelegate {
+extension SignUpFormView: UITextFieldDelegate {
     public func textField(
         _ textField: UITextField,
         shouldChangeCharactersIn range: NSRange,

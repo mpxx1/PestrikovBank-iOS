@@ -8,10 +8,10 @@
 import UIKit
 import Combine
 
-public final class LoginViewControllerImpl: UIViewController {
+public final class LoginViewController: UIViewController {
     
-    private var loginForm: LoginFormViewImpl
-    private var viewModel: LoginViewModelImpl
+    private var loginForm: LoginFormView
+    private var viewModel: LoginViewModel
     private var cancellables = Set<AnyCancellable>()
     
     private let backgroundImageView: UIImageView = {
@@ -21,7 +21,9 @@ public final class LoginViewControllerImpl: UIViewController {
         return imageView
     }()
     
-    init(loginForm: LoginFormViewImpl, viewModel: LoginViewModelImpl) {
+    public var onSignUpTapped: (() -> Void)?
+    
+    init(loginForm: LoginFormView, viewModel: LoginViewModel) {
         self.loginForm = loginForm
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -100,6 +102,14 @@ public final class LoginViewControllerImpl: UIViewController {
                 self?.viewModel.submitLogin()
             }
             .store(in: &cancellables)
+        
+        loginForm
+            .signUpButton
+            .publisher(for: .touchUpInside)
+            .sink { [weak self] _ in
+                self?.onSignUpTapped?()
+            }
+            .store(in: &cancellables)
 
         viewModel
             .isLoginEnabled
@@ -117,8 +127,8 @@ public final class LoginViewControllerImpl: UIViewController {
                     self?.loginForm.loginButton.titleLabel?.text = "Loading..."
                 case .failed(let error):
                     self?.showErrorAlert(message: error.localizedDescription)
-                case .succeeded: break
-                    // todo routing
+                case .succeeded:
+                    break
                 case .none:
                     break
                 }

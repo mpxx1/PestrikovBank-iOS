@@ -9,8 +9,10 @@ import UIKit
 
 public class ViewControllerDIContainer {
     struct Dependencies {
-        let loginForm: LoginFormViewImpl
-        let loginViewModel: LoginViewModelImpl
+        let loginForm: LoginFormView
+        let loginViewModel: LoginViewModel
+        let signUpForm: SignUpFormView
+        let signUpViewModel: SignUpViewModel
     }
     
     private let dependencies: Dependencies
@@ -19,10 +21,17 @@ public class ViewControllerDIContainer {
         self.dependencies = dependencies
     }
     
-    lazy var loginViewController: LoginViewControllerImpl = {
-        return LoginViewControllerImpl(
+    lazy var loginViewController: UIViewController = {
+        return LoginViewController(
             loginForm: dependencies.loginForm,
             viewModel: dependencies.loginViewModel
+        )
+    }()
+    
+    lazy var signUpViewController: SignUpViewController = {
+        return SignUpViewController(
+            signUpForm: dependencies.signUpForm,
+            signUpViewModel: dependencies.signUpViewModel
         )
     }()
 }

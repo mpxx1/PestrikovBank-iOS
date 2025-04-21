@@ -10,6 +10,7 @@ import UIKit
 public class RouteCoordinatorDIContainer {
     struct Dependencies {
         let loginViewController: UIViewController
+        let signUpViewController: UIViewController
     }
     
     private let dependencies: Dependencies
@@ -18,16 +19,30 @@ public class RouteCoordinatorDIContainer {
         self.dependencies = dependencies
     }
     
-    lazy var appCooridnator: RouteCoordinator = {
-        return AppCoordinator(
-            loginCoordinator: loginCooridnator,
-            mainCoordinator: MainCoordinator()  // todo change to func call
+    lazy var loginCooridnator: RouteCoordinator = {
+        return LoginCoordinator(
+            loginViewController: dependencies.loginViewController,
+            signUpViewController: dependencies.signUpViewController
         )
     }()
     
-    lazy var loginCooridnator: RouteCoordinator = {
-        return LoginCoordinator(
-            loginViewController: dependencies.loginViewController
+    lazy var accountsTabCoordinator: RouteCoordinator = {
+        return AccountsTabCoordinator(rootViewController: UIViewController())
+    }()
+    
+    lazy var transactionsTabCoordinator: RouteCoordinator = {
+        return TransactionsTabCoordinator(rootViewController: UIViewController())
+    }()
+    
+    lazy var paymentsTabCoordinator: RouteCoordinator = {
+        return PaymentsTabCoordinator(rootViewController: UIViewController())
+    }()
+    
+    lazy var mainCoordinator: RouteCoordinator = {
+        return MainCoordinator(
+            accountsTabCoordinator: accountsTabCoordinator,
+            paymentsTabCoordinator: paymentsTabCoordinator,
+            transactionsTabCoordinator: transactionsTabCoordinator
         )
     }()
 }

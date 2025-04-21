@@ -9,13 +9,20 @@ import UIKit
 
 public class AppDIContainer {
     
+    lazy var stringFormatDIContainer: StringFormatDIContainer = {
+        return StringFormatDIContainer()
+    }()
+    
     lazy var viewModelDIContainer: ViewModelDIContainer = {
-        return ViewModelDIContainer(dependencies: ViewModelDIContainer.Dependencies())
+        return ViewModelDIContainer(dependencies: ViewModelDIContainer.Dependencies(
+            phoneFormatter: stringFormatDIContainer.phoneNumberFormatter
+        ))
     }()
 
     lazy var viewDIContainer: ViewDIContainer = {
         return ViewDIContainer(dependencies: ViewDIContainer.Dependencies(
-            loginViewModel: viewModelDIContainer.loginViewModel
+            loginViewModel: viewModelDIContainer.loginViewModel,
+            signUpViewModel: viewModelDIContainer.signUpViewModel
         ))
     }()
     
@@ -23,7 +30,9 @@ public class AppDIContainer {
         return ViewControllerDIContainer(
             dependencies: ViewControllerDIContainer.Dependencies(
                 loginForm: viewDIContainer.loginForm,
-                loginViewModel: viewModelDIContainer.loginViewModel
+                loginViewModel: viewModelDIContainer.loginViewModel,
+                signUpForm: viewDIContainer.signUpForm,
+                signUpViewModel: viewModelDIContainer.signUpViewModel
             )
         )
     }()
@@ -31,7 +40,8 @@ public class AppDIContainer {
     lazy var routeCoordinatorDIContainer: RouteCoordinatorDIContainer = {
         return RouteCoordinatorDIContainer(
             dependencies: RouteCoordinatorDIContainer.Dependencies(
-                loginViewController: viewControllerDIContainer.loginViewController
+                loginViewController: viewControllerDIContainer.loginViewController,
+                signUpViewController: viewControllerDIContainer.signUpViewController
             )
         )
     }()

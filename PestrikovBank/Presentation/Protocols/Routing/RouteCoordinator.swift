@@ -15,6 +15,5 @@ public enum FlowVariant {
 public protocol RouteCoordinator: AnyObject {
     var rootViewController: UIViewController { get }
     func start()
-//    func navigate(to route: RouterVariant, animated: Bool)
 //    func goBack(animated: Bool)
 }

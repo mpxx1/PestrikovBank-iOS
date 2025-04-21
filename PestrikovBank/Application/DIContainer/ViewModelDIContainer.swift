@@ -8,7 +8,9 @@
 import UIKit
 
 public class ViewModelDIContainer {
-    struct Dependencies {}
+    struct Dependencies {
+        let phoneFormatter: PhoneFormat
+    }
     
     private var dependencies: Dependencies
     
@@ -16,7 +18,15 @@ public class ViewModelDIContainer {
         self.dependencies = dependencies
     }
     
-    lazy var loginViewModel: LoginViewModelImpl = {
-        return LoginViewModelImpl()
+    lazy var loginViewModel: LoginViewModel = {
+        return LoginViewModel(
+            phoneFromat: dependencies.phoneFormatter
+        )
+    }()
+    
+    lazy var signUpViewModel: SignUpViewModel = {
+        return SignUpViewModel(
+            phoneFormatter: dependencies.phoneFormatter
+        )
     }()
 }
