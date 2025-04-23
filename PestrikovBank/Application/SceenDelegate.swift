@@ -10,6 +10,8 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var appCoordinator: RouteCoordinator?
+    var appDIContainer: AppDIContainer = AppDIContainer()
 
     func scene(
         _ scene: UIScene,
@@ -19,12 +21,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         self.window = UIWindow(windowScene: windowScene)
         
-        window?.rootViewController = LoginViewControllerImpl(
-            loginForm: LoginFormViewImpl(
-                frame: window?.bounds ?? UIScreen.main.bounds
-            ),
-            viewModel: LoginViewModelImpl()
+        let appCoordinator = AppCoordinator(
+            window: self.window,
+            loginCoordinator: appDIContainer.routeCoordinatorDIContainer.loginCooridnator,
+            mainCoordinator: appDIContainer.routeCoordinatorDIContainer.mainCoordinator
         )
+        appCoordinator.start()
+        
+        self.appCoordinator = appCoordinator
         window?.makeKeyAndVisible()
     }
 }
