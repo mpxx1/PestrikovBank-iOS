@@ -7,57 +7,92 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		188AB7BFAFE2BA43DC6C88F7A1B27C8C /* Pods-PestrikovBank-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C96BC8D10E10B4637BBD62DD87BD7C /* Pods-PestrikovBank-dummy.m */; };
-		46C29E5D06139308B23770B5A455A58B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
-		62A0BDD4513A5D278E81F93208430665 /* Pods-PestrikovBankTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C3D9385339783123B44B8ACF65E3AA /* Pods-PestrikovBankTests-dummy.m */; };
-		8E127B87959EC078BCF5E8CD11767C5E /* Pods-PestrikovBank-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E5F606CA0E275FB362A094BAECFE8331 /* Pods-PestrikovBank-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9838ADF764CEF25CA53291716A0D405A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
-		992513002BE2A366D2FE6E56AF5CDE91 /* Pods-PestrikovBank-PestrikovBankUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C87B34836996378E3FBB5B0D39EBC65 /* Pods-PestrikovBank-PestrikovBankUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C139CBC3FC0B2D06D5E0B1264264690F /* Pods-PestrikovBankTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F2EA9F36506AFEA3DE8FD17CA7510E4 /* Pods-PestrikovBankTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CDEEEE586AC338F447C453BAEDD73157 /* Pods-PestrikovBank-PestrikovBankUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF5271D9974FC34B35F998F3D3D38CD /* Pods-PestrikovBank-PestrikovBankUITests-dummy.m */; };
+		03CB2EEBEEDD7CE592E51AD85D58B8A7 /* Pods-PestrikovBank-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B5A879087E939D1B2D42C9FB510C1497 /* Pods-PestrikovBank-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2584F8DD7729E5F6759C43B05B6566EE /* Pods-PestrikovBank-PestrikovBankUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C849456AA783A1AC03AF753A42F9A756 /* Pods-PestrikovBank-PestrikovBankUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43A27A7590AB8B341E0106298FF45CC6 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE5E9472BF525BD3E705261568E5199 /* KeychainWrapper.swift */; };
+		478D40A254B29DC1408D37D3D6051DF7 /* SwiftKeychainWrapper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD3B183F2B832E75AB78E4306742985 /* SwiftKeychainWrapper-dummy.m */; };
+		62A0BDD4513A5D278E81F93208430665 /* Pods-PestrikovBankTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F1838D97B36CAB6BE83B11662C29A9E /* Pods-PestrikovBankTests-dummy.m */; };
+		65B839BE189487730262928932EA18F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
+		6B3D87EB8C4D080A16704850B3A8F7F1 /* Pods-PestrikovBank-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EF3A625909A3E3DADD5FC4289CF24CAA /* Pods-PestrikovBank-dummy.m */; };
+		7BB7EA40D98983D92AB8521EC43AC6D2 /* SwiftKeychainWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = E50C46D8B59DEC0895EBC924E7E1F9AB /* SwiftKeychainWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		87F581A65BAFE8A7D0ABE864CEFC0B29 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
+		9DDE9A4DCA7722B701E4BC61B2CD9D6E /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401FEAAE1F19BDC26BAF62CC7FA30A96 /* KeychainItemAccessibility.swift */; };
+		BFD960743F2B1CB1FA7B3808284DE99F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
+		C139CBC3FC0B2D06D5E0B1264264690F /* Pods-PestrikovBankTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 52AA989EFC4EC95AF610EA00DAB72560 /* Pods-PestrikovBankTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C3A3449DC59910AFD931CDA48C603232 /* Pods-PestrikovBank-PestrikovBankUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 719106DA60AB828EEF5C7E4325291D33 /* Pods-PestrikovBank-PestrikovBankUITests-dummy.m */; };
+		CA05084D970F9A48B7EC4F8027D386AB /* SwiftKeychainWrapper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E305D3EE71B912A8108E1C1BA65FF413 /* SwiftKeychainWrapper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CCCFCDB26235AF88D2796246E5CF01E9 /* KeychainWrapperSubscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17BC4ECF36B8D66C3A362BC3659967B /* KeychainWrapperSubscript.swift */; };
 		D8524802B9A17C3B3E0DD6FFFC6E563C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		70EA50E603D581CD0650AD93E5EFDBA7 /* PBXContainerItemProxy */ = {
+		366E0D4F542D54DAF049F85858EC9F32 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 843AC7F3D786C7A156F1346E8CC1C30D;
 			remoteInfo = "Pods-PestrikovBank";
 		};
+		67C29EC6B61AA6C730C224544135F416 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF903DF43E111410ECA0C288D36FA21A;
+			remoteInfo = SwiftKeychainWrapper;
+		};
+		E0B64EF7826EA730318E91F3CD54CFEC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF903DF43E111410ECA0C288D36FA21A;
+			remoteInfo = SwiftKeychainWrapper;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		08ADF10824278A17BDF270EB94905BBF /* Pods-PestrikovBank-PestrikovBankUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PestrikovBank-PestrikovBankUITests.release.xcconfig"; sourceTree = "<group>"; };
 		0C65022655831893A322B99F84F3963B /* Pods-PestrikovBank-PestrikovBankUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-PestrikovBank-PestrikovBankUITests"; path = Pods_PestrikovBank_PestrikovBankUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		105501790361914994C0868D4326A6DA /* Pods-PestrikovBank.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PestrikovBank.modulemap"; sourceTree = "<group>"; };
-		107CC941402C9A9C4E1A3156957ECCB5 /* Pods-PestrikovBank-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PestrikovBank-Info.plist"; sourceTree = "<group>"; };
+		0D15D1F0B92B71192AC5621E49B91A40 /* Pods-PestrikovBank-PestrikovBankUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PestrikovBank-PestrikovBankUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		0DCCF203517ADC5FE2500EBCFBA68518 /* Pods-PestrikovBank-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PestrikovBank-frameworks.sh"; sourceTree = "<group>"; };
+		10DD871FB87CD8D383D316232B784264 /* Pods-PestrikovBank-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PestrikovBank-acknowledgements.markdown"; sourceTree = "<group>"; };
 		11233E9AA2886B455668EB71F4F11298 /* Pods-PestrikovBank */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-PestrikovBank"; path = Pods_PestrikovBank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		24C3D9385339783123B44B8ACF65E3AA /* Pods-PestrikovBankTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PestrikovBankTests-dummy.m"; sourceTree = "<group>"; };
-		269CC2FAF069CA2C11D454E8C7DFB24D /* Pods-PestrikovBank-PestrikovBankUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PestrikovBank-PestrikovBankUITests.release.xcconfig"; sourceTree = "<group>"; };
-		28B89E4E8F6D35E176EAC0B143BA3EB1 /* Pods-PestrikovBank-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PestrikovBank-acknowledgements.markdown"; sourceTree = "<group>"; };
-		2B9E141BAFBFFCB8C20DC52907080A7A /* Pods-PestrikovBank-PestrikovBankUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PestrikovBank-PestrikovBankUITests.modulemap"; sourceTree = "<group>"; };
+		197A0DE8025B4A123FF953F903AE6565 /* Pods-PestrikovBank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PestrikovBank.debug.xcconfig"; sourceTree = "<group>"; };
+		2781FC977D944A154F81EF17B0EEB388 /* Pods-PestrikovBank-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PestrikovBank-Info.plist"; sourceTree = "<group>"; };
 		384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		3B6C694AB659A01C55D38AF591340DDB /* Pods-PestrikovBank-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PestrikovBank-acknowledgements.plist"; sourceTree = "<group>"; };
-		3CF5271D9974FC34B35F998F3D3D38CD /* Pods-PestrikovBank-PestrikovBankUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PestrikovBank-PestrikovBankUITests-dummy.m"; sourceTree = "<group>"; };
-		3F816B2F9E22CFD707DF8097E9450863 /* Pods-PestrikovBank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PestrikovBank.release.xcconfig"; sourceTree = "<group>"; };
-		44C96BC8D10E10B4637BBD62DD87BD7C /* Pods-PestrikovBank-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PestrikovBank-dummy.m"; sourceTree = "<group>"; };
-		521863275E3EA4F0C8CAD1316B43F49E /* Pods-PestrikovBankTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PestrikovBankTests-Info.plist"; sourceTree = "<group>"; };
-		5359D36ABE9C1921A7500EBBC8BE5595 /* Pods-PestrikovBank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PestrikovBank.debug.xcconfig"; sourceTree = "<group>"; };
-		59F630C3A5008E91E3349B810919F932 /* Pods-PestrikovBankTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PestrikovBankTests.release.xcconfig"; sourceTree = "<group>"; };
-		5F2EA9F36506AFEA3DE8FD17CA7510E4 /* Pods-PestrikovBankTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PestrikovBankTests-umbrella.h"; sourceTree = "<group>"; };
-		727D29FD87FE309A47B8E6184FA7F703 /* Pods-PestrikovBankTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PestrikovBankTests.debug.xcconfig"; sourceTree = "<group>"; };
-		7C87B34836996378E3FBB5B0D39EBC65 /* Pods-PestrikovBank-PestrikovBankUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PestrikovBank-PestrikovBankUITests-umbrella.h"; sourceTree = "<group>"; };
-		80E72D3B7794EF7EC386035E66E3442C /* Pods-PestrikovBank-PestrikovBankUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PestrikovBank-PestrikovBankUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		81814AE31BEA50559CBDF2A48B194691 /* Pods-PestrikovBank-PestrikovBankUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PestrikovBank-PestrikovBankUITests-Info.plist"; sourceTree = "<group>"; };
+		3E07927E058126B1A2190825210897DC /* Pods-PestrikovBankTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PestrikovBankTests.debug.xcconfig"; sourceTree = "<group>"; };
+		401FEAAE1F19BDC26BAF62CC7FA30A96 /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeychainItemAccessibility.swift; path = SwiftKeychainWrapper/KeychainItemAccessibility.swift; sourceTree = "<group>"; };
+		455EF8D55B52BED1B918FEF9F86D669E /* Pods-PestrikovBank-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PestrikovBank-acknowledgements.plist"; sourceTree = "<group>"; };
+		4CD3B183F2B832E75AB78E4306742985 /* SwiftKeychainWrapper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftKeychainWrapper-dummy.m"; sourceTree = "<group>"; };
+		5069D199AB328CCD047E61C632CD7C32 /* SwiftKeychainWrapper */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftKeychainWrapper; path = SwiftKeychainWrapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		52AA989EFC4EC95AF610EA00DAB72560 /* Pods-PestrikovBankTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PestrikovBankTests-umbrella.h"; sourceTree = "<group>"; };
+		54FD711B00F50CD37280F12835E0964E /* Pods-PestrikovBank.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PestrikovBank.modulemap"; sourceTree = "<group>"; };
+		5AE5E9472BF525BD3E705261568E5199 /* KeychainWrapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeychainWrapper.swift; path = SwiftKeychainWrapper/KeychainWrapper.swift; sourceTree = "<group>"; };
+		5CFB04FEB4458AA699A90B3398293537 /* SwiftKeychainWrapper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftKeychainWrapper.debug.xcconfig; sourceTree = "<group>"; };
+		654F4033D6131A35433C22B05A8C028D /* Pods-PestrikovBankTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PestrikovBankTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		66A1EC832952C8C8FD3F4346A2B74B4A /* SwiftKeychainWrapper-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftKeychainWrapper-Info.plist"; sourceTree = "<group>"; };
+		6F1838D97B36CAB6BE83B11662C29A9E /* Pods-PestrikovBankTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PestrikovBankTests-dummy.m"; sourceTree = "<group>"; };
+		719106DA60AB828EEF5C7E4325291D33 /* Pods-PestrikovBank-PestrikovBankUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PestrikovBank-PestrikovBankUITests-dummy.m"; sourceTree = "<group>"; };
+		800F9A1A4CDFA2CDC65B24759D6774E3 /* Pods-PestrikovBank-PestrikovBankUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PestrikovBank-PestrikovBankUITests.modulemap"; sourceTree = "<group>"; };
+		81DF07D59A3BCB9D4771C37FAC113117 /* Pods-PestrikovBankTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PestrikovBankTests-Info.plist"; sourceTree = "<group>"; };
+		8A633A487FCE58DABE3270C4EF5A955C /* Pods-PestrikovBank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PestrikovBank.release.xcconfig"; sourceTree = "<group>"; };
 		8EDB6047D0326D418DAD888C04BA24DD /* Pods-PestrikovBankTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-PestrikovBankTests"; path = Pods_PestrikovBankTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		98BF6000AC6162CC9FCD40786388688E /* Pods-PestrikovBankTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PestrikovBankTests.modulemap"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		AB6C17461F3DEC475163C323C7701E93 /* Pods-PestrikovBankTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PestrikovBankTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		BFF1C25329B1902A5DAD8BEE211F1AA5 /* Pods-PestrikovBank-PestrikovBankUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PestrikovBank-PestrikovBankUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		CBA76DB4F7A2769E6078635374077C22 /* Pods-PestrikovBank-PestrikovBankUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PestrikovBank-PestrikovBankUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		E5F606CA0E275FB362A094BAECFE8331 /* Pods-PestrikovBank-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PestrikovBank-umbrella.h"; sourceTree = "<group>"; };
-		EE4B95F2E4F17016B85442D16457BEFF /* Pods-PestrikovBankTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PestrikovBankTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		AF488A977815A1B45CDC7E94AAF1DEEC /* SwiftKeychainWrapper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftKeychainWrapper-prefix.pch"; sourceTree = "<group>"; };
+		B5A879087E939D1B2D42C9FB510C1497 /* Pods-PestrikovBank-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PestrikovBank-umbrella.h"; sourceTree = "<group>"; };
+		BDB815F8032279DD8E4B132534FE637B /* Pods-PestrikovBankTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PestrikovBankTests.release.xcconfig"; sourceTree = "<group>"; };
+		BE0F74C793AD42917AF0C4D2EFAAA299 /* Pods-PestrikovBankTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PestrikovBankTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		C7B7830E1D10A881D31F7B73C9F7F35E /* Pods-PestrikovBank-PestrikovBankUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PestrikovBank-PestrikovBankUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		C849456AA783A1AC03AF753A42F9A756 /* Pods-PestrikovBank-PestrikovBankUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PestrikovBank-PestrikovBankUITests-umbrella.h"; sourceTree = "<group>"; };
+		D17BC4ECF36B8D66C3A362BC3659967B /* KeychainWrapperSubscript.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeychainWrapperSubscript.swift; path = SwiftKeychainWrapper/KeychainWrapperSubscript.swift; sourceTree = "<group>"; };
+		D3A8A21DAA03F33062FEF24F702013A4 /* Pods-PestrikovBank-PestrikovBankUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PestrikovBank-PestrikovBankUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		E05A6FC530DC5A853665D015CB29AECE /* SwiftKeychainWrapper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftKeychainWrapper.modulemap; sourceTree = "<group>"; };
+		E253362C2B8947EB9042F02860AFCE8A /* Pods-PestrikovBankTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PestrikovBankTests.modulemap"; sourceTree = "<group>"; };
+		E305D3EE71B912A8108E1C1BA65FF413 /* SwiftKeychainWrapper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftKeychainWrapper-umbrella.h"; sourceTree = "<group>"; };
+		E50C46D8B59DEC0895EBC924E7E1F9AB /* SwiftKeychainWrapper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SwiftKeychainWrapper.h; path = SwiftKeychainWrapper/SwiftKeychainWrapper.h; sourceTree = "<group>"; };
+		EF3A625909A3E3DADD5FC4289CF24CAA /* Pods-PestrikovBank-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PestrikovBank-dummy.m"; sourceTree = "<group>"; };
+		EF9D370359AADCA0963C43618AAB128C /* SwiftKeychainWrapper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftKeychainWrapper.release.xcconfig; sourceTree = "<group>"; };
+		FB8F55E7C5FAA990F7C3A27394C5E338 /* Pods-PestrikovBank-PestrikovBankUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PestrikovBank-PestrikovBankUITests-Info.plist"; sourceTree = "<group>"; };
+		FD552647FF8835F8DE6897768BE655A7 /* Pods-PestrikovBank-PestrikovBankUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PestrikovBank-PestrikovBankUITests-frameworks.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,75 +104,93 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7626909860C97AAE9EA6E5B666A3BF27 /* Frameworks */ = {
+		925843E3AFD4FAD68B3982BBD194093D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46C29E5D06139308B23770B5A455A58B /* Foundation.framework in Frameworks */,
+				65B839BE189487730262928932EA18F9 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A9CA4B56A401451FF71C4B77F12F4478 /* Frameworks */ = {
+		D5556A6616E7DEE44541A916074647AF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9838ADF764CEF25CA53291716A0D405A /* Foundation.framework in Frameworks */,
+				BFD960743F2B1CB1FA7B3808284DE99F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC78111059393E9AE367E046558ED6CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87F581A65BAFE8A7D0ABE864CEFC0B29 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2AB40796C26E20F645C993F09BC30F6F /* Pods-PestrikovBank */ = {
+		298C4E653D55BB7172D6D3FB1E02C54C /* Pods-PestrikovBank-PestrikovBankUITests */ = {
 			isa = PBXGroup;
 			children = (
-				105501790361914994C0868D4326A6DA /* Pods-PestrikovBank.modulemap */,
-				28B89E4E8F6D35E176EAC0B143BA3EB1 /* Pods-PestrikovBank-acknowledgements.markdown */,
-				3B6C694AB659A01C55D38AF591340DDB /* Pods-PestrikovBank-acknowledgements.plist */,
-				44C96BC8D10E10B4637BBD62DD87BD7C /* Pods-PestrikovBank-dummy.m */,
-				107CC941402C9A9C4E1A3156957ECCB5 /* Pods-PestrikovBank-Info.plist */,
-				E5F606CA0E275FB362A094BAECFE8331 /* Pods-PestrikovBank-umbrella.h */,
-				5359D36ABE9C1921A7500EBBC8BE5595 /* Pods-PestrikovBank.debug.xcconfig */,
-				3F816B2F9E22CFD707DF8097E9450863 /* Pods-PestrikovBank.release.xcconfig */,
+				800F9A1A4CDFA2CDC65B24759D6774E3 /* Pods-PestrikovBank-PestrikovBankUITests.modulemap */,
+				C7B7830E1D10A881D31F7B73C9F7F35E /* Pods-PestrikovBank-PestrikovBankUITests-acknowledgements.markdown */,
+				D3A8A21DAA03F33062FEF24F702013A4 /* Pods-PestrikovBank-PestrikovBankUITests-acknowledgements.plist */,
+				719106DA60AB828EEF5C7E4325291D33 /* Pods-PestrikovBank-PestrikovBankUITests-dummy.m */,
+				FD552647FF8835F8DE6897768BE655A7 /* Pods-PestrikovBank-PestrikovBankUITests-frameworks.sh */,
+				FB8F55E7C5FAA990F7C3A27394C5E338 /* Pods-PestrikovBank-PestrikovBankUITests-Info.plist */,
+				C849456AA783A1AC03AF753A42F9A756 /* Pods-PestrikovBank-PestrikovBankUITests-umbrella.h */,
+				0D15D1F0B92B71192AC5621E49B91A40 /* Pods-PestrikovBank-PestrikovBankUITests.debug.xcconfig */,
+				08ADF10824278A17BDF270EB94905BBF /* Pods-PestrikovBank-PestrikovBankUITests.release.xcconfig */,
 			);
-			name = "Pods-PestrikovBank";
-			path = "Target Support Files/Pods-PestrikovBank";
+			name = "Pods-PestrikovBank-PestrikovBankUITests";
+			path = "Target Support Files/Pods-PestrikovBank-PestrikovBankUITests";
 			sourceTree = "<group>";
 		};
-		3DA13A6615DB526DEEED0DB91010CCBC /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				2AB40796C26E20F645C993F09BC30F6F /* Pods-PestrikovBank */,
-				74EFC99C8BC5C3371D009CCD49825D71 /* Pods-PestrikovBank-PestrikovBankUITests */,
-				EA9C6E1833325DE5DCCC1F635777AE3D /* Pods-PestrikovBankTests */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		5852493C59E4FD89088A94CC923BD78D /* Products */ = {
+		35A042ECD25C44742A7EBA50D07FF78C /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				11233E9AA2886B455668EB71F4F11298 /* Pods-PestrikovBank */,
 				0C65022655831893A322B99F84F3963B /* Pods-PestrikovBank-PestrikovBankUITests */,
 				8EDB6047D0326D418DAD888C04BA24DD /* Pods-PestrikovBankTests */,
+				5069D199AB328CCD047E61C632CD7C32 /* SwiftKeychainWrapper */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		74EFC99C8BC5C3371D009CCD49825D71 /* Pods-PestrikovBank-PestrikovBankUITests */ = {
+		4D9253D8D9382E21E72D01A5076FF530 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2B9E141BAFBFFCB8C20DC52907080A7A /* Pods-PestrikovBank-PestrikovBankUITests.modulemap */,
-				BFF1C25329B1902A5DAD8BEE211F1AA5 /* Pods-PestrikovBank-PestrikovBankUITests-acknowledgements.markdown */,
-				CBA76DB4F7A2769E6078635374077C22 /* Pods-PestrikovBank-PestrikovBankUITests-acknowledgements.plist */,
-				3CF5271D9974FC34B35F998F3D3D38CD /* Pods-PestrikovBank-PestrikovBankUITests-dummy.m */,
-				81814AE31BEA50559CBDF2A48B194691 /* Pods-PestrikovBank-PestrikovBankUITests-Info.plist */,
-				7C87B34836996378E3FBB5B0D39EBC65 /* Pods-PestrikovBank-PestrikovBankUITests-umbrella.h */,
-				80E72D3B7794EF7EC386035E66E3442C /* Pods-PestrikovBank-PestrikovBankUITests.debug.xcconfig */,
-				269CC2FAF069CA2C11D454E8C7DFB24D /* Pods-PestrikovBank-PestrikovBankUITests.release.xcconfig */,
+				FD889C92A54761B6B2F24356812B3E85 /* SwiftKeychainWrapper */,
 			);
-			name = "Pods-PestrikovBank-PestrikovBankUITests";
-			path = "Target Support Files/Pods-PestrikovBank-PestrikovBankUITests";
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AA1BC1C74DF956819D2EB64A4EC03BFD /* Pods-PestrikovBankTests */ = {
+			isa = PBXGroup;
+			children = (
+				E253362C2B8947EB9042F02860AFCE8A /* Pods-PestrikovBankTests.modulemap */,
+				654F4033D6131A35433C22B05A8C028D /* Pods-PestrikovBankTests-acknowledgements.markdown */,
+				BE0F74C793AD42917AF0C4D2EFAAA299 /* Pods-PestrikovBankTests-acknowledgements.plist */,
+				6F1838D97B36CAB6BE83B11662C29A9E /* Pods-PestrikovBankTests-dummy.m */,
+				81DF07D59A3BCB9D4771C37FAC113117 /* Pods-PestrikovBankTests-Info.plist */,
+				52AA989EFC4EC95AF610EA00DAB72560 /* Pods-PestrikovBankTests-umbrella.h */,
+				3E07927E058126B1A2190825210897DC /* Pods-PestrikovBankTests.debug.xcconfig */,
+				BDB815F8032279DD8E4B132534FE637B /* Pods-PestrikovBankTests.release.xcconfig */,
+			);
+			name = "Pods-PestrikovBankTests";
+			path = "Target Support Files/Pods-PestrikovBankTests";
+			sourceTree = "<group>";
+		};
+		B62497DBEAD853FD0CD832B31088DBA7 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DBDE9A364FF98BAA969E6DF9278F0EF7 /* Pods-PestrikovBank */,
+				298C4E653D55BB7172D6D3FB1E02C54C /* Pods-PestrikovBank-PestrikovBankUITests */,
+				AA1BC1C74DF956819D2EB64A4EC03BFD /* Pods-PestrikovBankTests */,
+			);
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -145,8 +198,9 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				5852493C59E4FD89088A94CC923BD78D /* Products */,
-				3DA13A6615DB526DEEED0DB91010CCBC /* Targets Support Files */,
+				4D9253D8D9382E21E72D01A5076FF530 /* Pods */,
+				35A042ECD25C44742A7EBA50D07FF78C /* Products */,
+				B62497DBEAD853FD0CD832B31088DBA7 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -158,6 +212,38 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DBDE9A364FF98BAA969E6DF9278F0EF7 /* Pods-PestrikovBank */ = {
+			isa = PBXGroup;
+			children = (
+				54FD711B00F50CD37280F12835E0964E /* Pods-PestrikovBank.modulemap */,
+				10DD871FB87CD8D383D316232B784264 /* Pods-PestrikovBank-acknowledgements.markdown */,
+				455EF8D55B52BED1B918FEF9F86D669E /* Pods-PestrikovBank-acknowledgements.plist */,
+				EF3A625909A3E3DADD5FC4289CF24CAA /* Pods-PestrikovBank-dummy.m */,
+				0DCCF203517ADC5FE2500EBCFBA68518 /* Pods-PestrikovBank-frameworks.sh */,
+				2781FC977D944A154F81EF17B0EEB388 /* Pods-PestrikovBank-Info.plist */,
+				B5A879087E939D1B2D42C9FB510C1497 /* Pods-PestrikovBank-umbrella.h */,
+				197A0DE8025B4A123FF953F903AE6565 /* Pods-PestrikovBank.debug.xcconfig */,
+				8A633A487FCE58DABE3270C4EF5A955C /* Pods-PestrikovBank.release.xcconfig */,
+			);
+			name = "Pods-PestrikovBank";
+			path = "Target Support Files/Pods-PestrikovBank";
+			sourceTree = "<group>";
+		};
+		DBF7F7D339302EBCE551E5A9B4185871 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E05A6FC530DC5A853665D015CB29AECE /* SwiftKeychainWrapper.modulemap */,
+				4CD3B183F2B832E75AB78E4306742985 /* SwiftKeychainWrapper-dummy.m */,
+				66A1EC832952C8C8FD3F4346A2B74B4A /* SwiftKeychainWrapper-Info.plist */,
+				AF488A977815A1B45CDC7E94AAF1DEEC /* SwiftKeychainWrapper-prefix.pch */,
+				E305D3EE71B912A8108E1C1BA65FF413 /* SwiftKeychainWrapper-umbrella.h */,
+				5CFB04FEB4458AA699A90B3398293537 /* SwiftKeychainWrapper.debug.xcconfig */,
+				EF9D370359AADCA0963C43618AAB128C /* SwiftKeychainWrapper.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftKeychainWrapper";
+			sourceTree = "<group>";
+		};
 		E4801F62A6B08CD9B5410329F1A18FDE /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,38 +252,44 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		EA9C6E1833325DE5DCCC1F635777AE3D /* Pods-PestrikovBankTests */ = {
+		FD889C92A54761B6B2F24356812B3E85 /* SwiftKeychainWrapper */ = {
 			isa = PBXGroup;
 			children = (
-				98BF6000AC6162CC9FCD40786388688E /* Pods-PestrikovBankTests.modulemap */,
-				AB6C17461F3DEC475163C323C7701E93 /* Pods-PestrikovBankTests-acknowledgements.markdown */,
-				EE4B95F2E4F17016B85442D16457BEFF /* Pods-PestrikovBankTests-acknowledgements.plist */,
-				24C3D9385339783123B44B8ACF65E3AA /* Pods-PestrikovBankTests-dummy.m */,
-				521863275E3EA4F0C8CAD1316B43F49E /* Pods-PestrikovBankTests-Info.plist */,
-				5F2EA9F36506AFEA3DE8FD17CA7510E4 /* Pods-PestrikovBankTests-umbrella.h */,
-				727D29FD87FE309A47B8E6184FA7F703 /* Pods-PestrikovBankTests.debug.xcconfig */,
-				59F630C3A5008E91E3349B810919F932 /* Pods-PestrikovBankTests.release.xcconfig */,
+				401FEAAE1F19BDC26BAF62CC7FA30A96 /* KeychainItemAccessibility.swift */,
+				5AE5E9472BF525BD3E705261568E5199 /* KeychainWrapper.swift */,
+				D17BC4ECF36B8D66C3A362BC3659967B /* KeychainWrapperSubscript.swift */,
+				E50C46D8B59DEC0895EBC924E7E1F9AB /* SwiftKeychainWrapper.h */,
+				DBF7F7D339302EBCE551E5A9B4185871 /* Support Files */,
 			);
-			name = "Pods-PestrikovBankTests";
-			path = "Target Support Files/Pods-PestrikovBankTests";
+			name = SwiftKeychainWrapper;
+			path = SwiftKeychainWrapper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		01AF9095422A0D055E5A770070678D44 /* Headers */ = {
+		00DCBAC6F7586C0697AB5CCD474E5060 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				992513002BE2A366D2FE6E56AF5CDE91 /* Pods-PestrikovBank-PestrikovBankUITests-umbrella.h in Headers */,
+				7BB7EA40D98983D92AB8521EC43AC6D2 /* SwiftKeychainWrapper.h in Headers */,
+				CA05084D970F9A48B7EC4F8027D386AB /* SwiftKeychainWrapper-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5B3F3E7BED70660AC44544240021006A /* Headers */ = {
+		9B57F7122999BDEC442150B41494648B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E127B87959EC078BCF5E8CD11767C5E /* Pods-PestrikovBank-umbrella.h in Headers */,
+				03CB2EEBEEDD7CE592E51AD85D58B8A7 /* Pods-PestrikovBank-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A328FB7762FDCAA73CC3E3BB8B6EE5A2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2584F8DD7729E5F6759C43B05B6566EE /* Pods-PestrikovBank-PestrikovBankUITests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,16 +306,17 @@
 /* Begin PBXNativeTarget section */
 		18BAA57C19BF567F730385EF0894DC98 /* Pods-PestrikovBank-PestrikovBankUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A829739FAD45833A95CF9F8C1AD9AD94 /* Build configuration list for PBXNativeTarget "Pods-PestrikovBank-PestrikovBankUITests" */;
+			buildConfigurationList = 6DDA547913642C32F1EB91F8E5DA78F6 /* Build configuration list for PBXNativeTarget "Pods-PestrikovBank-PestrikovBankUITests" */;
 			buildPhases = (
-				01AF9095422A0D055E5A770070678D44 /* Headers */,
-				813DD1D04980F5A73E39C80183FC2E57 /* Sources */,
-				A9CA4B56A401451FF71C4B77F12F4478 /* Frameworks */,
-				184C899E716A886D1FDCA405DC02C4DB /* Resources */,
+				A328FB7762FDCAA73CC3E3BB8B6EE5A2 /* Headers */,
+				A0BC2DB58D47C0DD8EFA3DB70EC7EF91 /* Sources */,
+				925843E3AFD4FAD68B3982BBD194093D /* Frameworks */,
+				584EED9D82E12D90F21839CC6579CF87 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2007FE624DFFC3C3127681A10F6AEDB6 /* PBXTargetDependency */,
 			);
 			name = "Pods-PestrikovBank-PestrikovBankUITests";
 			productName = Pods_PestrikovBank_PestrikovBankUITests;
@@ -232,20 +325,39 @@
 		};
 		843AC7F3D786C7A156F1346E8CC1C30D /* Pods-PestrikovBank */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F62D666239E2B48AED99A8795F24B324 /* Build configuration list for PBXNativeTarget "Pods-PestrikovBank" */;
+			buildConfigurationList = B4AE014B1572A189F03928054EA359E1 /* Build configuration list for PBXNativeTarget "Pods-PestrikovBank" */;
 			buildPhases = (
-				5B3F3E7BED70660AC44544240021006A /* Headers */,
-				1E7F5B8ECCE6FA739B57A0DAD030168C /* Sources */,
-				7626909860C97AAE9EA6E5B666A3BF27 /* Frameworks */,
-				90A7FC1E01D98954A2883469C5F3B669 /* Resources */,
+				9B57F7122999BDEC442150B41494648B /* Headers */,
+				11F4CE9B1B440263CD2A121745D02C49 /* Sources */,
+				FC78111059393E9AE367E046558ED6CB /* Frameworks */,
+				B2EBDE3AD29520E8D3EFFBE8201C7145 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FDC931E9AABFDCA179F539C446D04FC6 /* PBXTargetDependency */,
+			);
+			name = "Pods-PestrikovBank";
+			productName = Pods_PestrikovBank;
+			productReference = 11233E9AA2886B455668EB71F4F11298 /* Pods-PestrikovBank */;
+			productType = "com.apple.product-type.framework";
+		};
+		CF903DF43E111410ECA0C288D36FA21A /* SwiftKeychainWrapper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 76CB671120DA668996BFAEDD66DF2560 /* Build configuration list for PBXNativeTarget "SwiftKeychainWrapper" */;
+			buildPhases = (
+				00DCBAC6F7586C0697AB5CCD474E5060 /* Headers */,
+				73AC8CBDDCC26F95D52F1070A90C6FE8 /* Sources */,
+				D5556A6616E7DEE44541A916074647AF /* Frameworks */,
+				E51E0BE50271DD1EFAC240BCA2A70B58 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Pods-PestrikovBank";
-			productName = Pods_PestrikovBank;
-			productReference = 11233E9AA2886B455668EB71F4F11298 /* Pods-PestrikovBank */;
+			name = SwiftKeychainWrapper;
+			productName = SwiftKeychainWrapper;
+			productReference = 5069D199AB328CCD047E61C632CD7C32 /* SwiftKeychainWrapper */;
 			productType = "com.apple.product-type.framework";
 		};
 		ECC265E2E06B3151721FBA303652480B /* Pods-PestrikovBankTests */ = {
@@ -260,7 +372,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				D21E017F87D1C6397EE44A0FCB2CCC74 /* PBXTargetDependency */,
+				02E9B050C66604F9DD0720E0CDC5D49B /* PBXTargetDependency */,
 			);
 			name = "Pods-PestrikovBankTests";
 			productName = Pods_PestrikovBankTests;
@@ -287,26 +399,20 @@
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
 			minimizedProjectReferenceProxies = 0;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 5852493C59E4FD89088A94CC923BD78D /* Products */;
+			productRefGroup = 35A042ECD25C44742A7EBA50D07FF78C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				843AC7F3D786C7A156F1346E8CC1C30D /* Pods-PestrikovBank */,
 				18BAA57C19BF567F730385EF0894DC98 /* Pods-PestrikovBank-PestrikovBankUITests */,
 				ECC265E2E06B3151721FBA303652480B /* Pods-PestrikovBankTests */,
+				CF903DF43E111410ECA0C288D36FA21A /* SwiftKeychainWrapper */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		184C899E716A886D1FDCA405DC02C4DB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		90A7FC1E01D98954A2883469C5F3B669 /* Resources */ = {
+		584EED9D82E12D90F21839CC6579CF87 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -320,14 +426,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B2EBDE3AD29520E8D3EFFBE8201C7145 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E51E0BE50271DD1EFAC240BCA2A70B58 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1E7F5B8ECCE6FA739B57A0DAD030168C /* Sources */ = {
+		11F4CE9B1B440263CD2A121745D02C49 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				188AB7BFAFE2BA43DC6C88F7A1B27C8C /* Pods-PestrikovBank-dummy.m in Sources */,
+				6B3D87EB8C4D080A16704850B3A8F7F1 /* Pods-PestrikovBank-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,29 +459,90 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		813DD1D04980F5A73E39C80183FC2E57 /* Sources */ = {
+		73AC8CBDDCC26F95D52F1070A90C6FE8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDEEEE586AC338F447C453BAEDD73157 /* Pods-PestrikovBank-PestrikovBankUITests-dummy.m in Sources */,
+				9DDE9A4DCA7722B701E4BC61B2CD9D6E /* KeychainItemAccessibility.swift in Sources */,
+				43A27A7590AB8B341E0106298FF45CC6 /* KeychainWrapper.swift in Sources */,
+				CCCFCDB26235AF88D2796246E5CF01E9 /* KeychainWrapperSubscript.swift in Sources */,
+				478D40A254B29DC1408D37D3D6051DF7 /* SwiftKeychainWrapper-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0BC2DB58D47C0DD8EFA3DB70EC7EF91 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3A3449DC59910AFD931CDA48C603232 /* Pods-PestrikovBank-PestrikovBankUITests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D21E017F87D1C6397EE44A0FCB2CCC74 /* PBXTargetDependency */ = {
+		02E9B050C66604F9DD0720E0CDC5D49B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-PestrikovBank";
 			target = 843AC7F3D786C7A156F1346E8CC1C30D /* Pods-PestrikovBank */;
-			targetProxy = 70EA50E603D581CD0650AD93E5EFDBA7 /* PBXContainerItemProxy */;
+			targetProxy = 366E0D4F542D54DAF049F85858EC9F32 /* PBXContainerItemProxy */;
+		};
+		2007FE624DFFC3C3127681A10F6AEDB6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftKeychainWrapper;
+			target = CF903DF43E111410ECA0C288D36FA21A /* SwiftKeychainWrapper */;
+			targetProxy = 67C29EC6B61AA6C730C224544135F416 /* PBXContainerItemProxy */;
+		};
+		FDC931E9AABFDCA179F539C446D04FC6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftKeychainWrapper;
+			target = CF903DF43E111410ECA0C288D36FA21A /* SwiftKeychainWrapper */;
+			targetProxy = E0B64EF7826EA730318E91F3CD54CFEC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		164D234316F4A7814C5F4348E0FD7C5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CFB04FEB4458AA699A90B3398293537 /* SwiftKeychainWrapper.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftKeychainWrapper/SwiftKeychainWrapper-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/SwiftKeychainWrapper/SwiftKeychainWrapper-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftKeychainWrapper/SwiftKeychainWrapper.modulemap";
+				PRODUCT_MODULE_NAME = SwiftKeychainWrapper;
+				PRODUCT_NAME = SwiftKeychainWrapper;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		1AEBDF1BFD052999918422BDB5DAEAA9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 727D29FD87FE309A47B8E6184FA7F703 /* Pods-PestrikovBankTests.debug.xcconfig */;
+			baseConfigurationReference = 3E07927E058126B1A2190825210897DC /* Pods-PestrikovBankTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -398,9 +579,9 @@
 			};
 			name = Debug;
 		};
-		343CFEE8588E94DA6FB3A8760B05FE2C /* Debug */ = {
+		39438DB5D9CF74819ACC448419DC1712 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5359D36ABE9C1921A7500EBBC8BE5595 /* Pods-PestrikovBank.debug.xcconfig */;
+			baseConfigurationReference = 197A0DE8025B4A123FF953F903AE6565 /* Pods-PestrikovBank.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -436,6 +617,46 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		4F885167FBA1B608954289D437188B0B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08ADF10824278A17BDF270EB94905BBF /* Pods-PestrikovBank-PestrikovBankUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-PestrikovBank-PestrikovBankUITests/Pods-PestrikovBank-PestrikovBankUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PestrikovBank-PestrikovBankUITests/Pods-PestrikovBank-PestrikovBankUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		531AB9B51913EE274022D67EB63CB4E1 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -499,49 +720,9 @@
 			};
 			name = Release;
 		};
-		7A8D22E2ECD8C06368AF598890C41DFB /* Release */ = {
+		6715807D2C6DA2BC2FE51C3E1A2E866D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 269CC2FAF069CA2C11D454E8C7DFB24D /* Pods-PestrikovBank-PestrikovBankUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_MODULE_VERIFIER = NO;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
-				INFOPLIST_FILE = "Target Support Files/Pods-PestrikovBank-PestrikovBankUITests/Pods-PestrikovBank-PestrikovBankUITests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-PestrikovBank-PestrikovBankUITests/Pods-PestrikovBank-PestrikovBankUITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		8785AAA9D4BCE2FFC8CF1E798A4BCEC0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 80E72D3B7794EF7EC386035E66E3442C /* Pods-PestrikovBank-PestrikovBankUITests.debug.xcconfig */;
+			baseConfigurationReference = 0D15D1F0B92B71192AC5621E49B91A40 /* Pods-PestrikovBank-PestrikovBankUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -577,6 +758,46 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		7F9AED5781A8C28C9EC5353180F893F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A633A487FCE58DABE3270C4EF5A955C /* Pods-PestrikovBank.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-PestrikovBank/Pods-PestrikovBank-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PestrikovBank/Pods-PestrikovBank.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		A06A0B8B8C2AC1F57A3C67ACD4FEC0B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -644,12 +865,10 @@
 			};
 			name = Debug;
 		};
-		ADE4A7B167FCE638A14623C07CC77E40 /* Release */ = {
+		C1238B6F45B99CBFA2DE1E81C06F98A2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3F816B2F9E22CFD707DF8097E9450863 /* Pods-PestrikovBank.release.xcconfig */;
+			baseConfigurationReference = EF9D370359AADCA0963C43618AAB128C /* SwiftKeychainWrapper.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -660,23 +879,24 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_MODULE_VERIFIER = NO;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
-				INFOPLIST_FILE = "Target Support Files/Pods-PestrikovBank/Pods-PestrikovBank-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftKeychainWrapper/SwiftKeychainWrapper-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/SwiftKeychainWrapper/SwiftKeychainWrapper-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-PestrikovBank/Pods-PestrikovBank.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/SwiftKeychainWrapper/SwiftKeychainWrapper.modulemap";
+				PRODUCT_MODULE_NAME = SwiftKeychainWrapper;
+				PRODUCT_NAME = SwiftKeychainWrapper;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -686,7 +906,7 @@
 		};
 		E91AFAED34C7EF6A3100196E441C8966 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 59F630C3A5008E91E3349B810919F932 /* Pods-PestrikovBankTests.release.xcconfig */;
+			baseConfigurationReference = BDB815F8032279DD8E4B132534FE637B /* Pods-PestrikovBankTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -745,20 +965,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A829739FAD45833A95CF9F8C1AD9AD94 /* Build configuration list for PBXNativeTarget "Pods-PestrikovBank-PestrikovBankUITests" */ = {
+		6DDA547913642C32F1EB91F8E5DA78F6 /* Build configuration list for PBXNativeTarget "Pods-PestrikovBank-PestrikovBankUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8785AAA9D4BCE2FFC8CF1E798A4BCEC0 /* Debug */,
-				7A8D22E2ECD8C06368AF598890C41DFB /* Release */,
+				6715807D2C6DA2BC2FE51C3E1A2E866D /* Debug */,
+				4F885167FBA1B608954289D437188B0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F62D666239E2B48AED99A8795F24B324 /* Build configuration list for PBXNativeTarget "Pods-PestrikovBank" */ = {
+		76CB671120DA668996BFAEDD66DF2560 /* Build configuration list for PBXNativeTarget "SwiftKeychainWrapper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				343CFEE8588E94DA6FB3A8760B05FE2C /* Debug */,
-				ADE4A7B167FCE638A14623C07CC77E40 /* Release */,
+				164D234316F4A7814C5F4348E0FD7C5B /* Debug */,
+				C1238B6F45B99CBFA2DE1E81C06F98A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B4AE014B1572A189F03928054EA359E1 /* Build configuration list for PBXNativeTarget "Pods-PestrikovBank" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39438DB5D9CF74819ACC448419DC1712 /* Debug */,
+				7F9AED5781A8C28C9EC5353180F893F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

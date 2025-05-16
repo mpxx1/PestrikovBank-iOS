@@ -8,7 +8,7 @@
 import Combine
 
 public protocol SessionManager {
-    var authState: AuthState { get }
-    func startSession(with authTokens: AuthTokens) -> AnyPublisher<Void, Error>
-    func endSession() -> AnyPublisher<Void, Error>
+    var currentUserPublisher: AnyPublisher<AuthState, Never> { get }
+    func login(creds: Creds) -> AnyPublisher<AuthState, Error>
+    func logout() -> AnyPublisher<AuthState, Never>
 }

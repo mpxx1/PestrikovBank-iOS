@@ -1,8 +1,8 @@
 //
-//  PBAuthCredentialsProvider.swift
+//  Creds.swift
 //  PestrikovBank
 //
-//  Created by m on 3/27/25.
+//  Created by m on 16.05.2025.
 //
 
 public protocol Creds {

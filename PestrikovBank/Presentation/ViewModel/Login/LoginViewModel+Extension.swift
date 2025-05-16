@@ -86,14 +86,11 @@ public final class LoginViewModel: PhoneFormat {
         let tmp = true
         
         if tmp {
-            SessionManagerImpl
-                .shared
-                .startSession(
-                    with: AutAuthTokensImpl(
-                        accessToken: "t1",
-                        refreshToken: "t2"
-                    )
-                )
+//            SessionManagerImpl
+//                .shared
+//                .startSession(
+//                    with: UserIdImpl(id: 0) // todo request
+//                )
             
             return .success(())
         } else {
