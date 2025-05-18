@@ -7,6 +7,6 @@
 
 import Combine
 
-public protocol GetUserInfoUseCase {
-    func execute() -> AnyPublisher<any User, Error>
+public protocol FetchMeUseCase {
+    func execute() -> AnyPublisher<UserImpl, Error>
 }

@@ -18,6 +18,7 @@ enum LoginState {
 
 public final class LoginViewModel: PhoneFormat {
     
+    private var cancellables: Set<AnyCancellable> = []
     private var phoneFormatter: PhoneFormat
     @Published var state: LoginState = .none
     @Published var phoneNumber = ""
@@ -46,24 +47,35 @@ public final class LoginViewModel: PhoneFormat {
     
     init(phoneFromat: PhoneFormat) {
         self.phoneFormatter = phoneFromat
+        bindSessionManager()
     }
     
     public func submitLogin() {
         state = .loading
         
-        DispatchQueue
-            .main
-            .async { [weak self] in
-                
-                guard let self else { return }
-                
-                switch self.isCorrectLogin() {
-                case .success:
-                    self.state = .succeeded
+        SessionManagerImpl
+            .shared
+            .login(creds: AuthCredsImpl(phoneNumber: phoneNumber, password: secret))
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { [weak self] completion in
+                switch completion {
+                case .finished:
+                    break
                 case .failure(let error):
-                    self.state = .failed(error)
+                    self?.state = .failed(error)
+                    self?.secret = ""
                 }
-            }
+            }, receiveValue: { [weak self] authState in
+                switch authState {
+                case .loggedIn(_):
+                    self?.state = .succeeded
+                case .loggedOut:
+                    self?.state = .failed(NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Login failed"]))
+                case .loading:
+                    self?.state = .loading
+                }
+            })
+            .store(in: &cancellables)
     }
     
     public var maxLength: Int {
@@ -78,23 +90,23 @@ public final class LoginViewModel: PhoneFormat {
         phoneFormatter.phoneFormat()
     }
     
-    private func isCorrectLogin() -> Result<Void, Error> {
-        // login request
-        // create creds object
-        // pass it to async servier request use case
-        
-        let tmp = true
-        
-        if tmp {
-//            SessionManagerImpl
-//                .shared
-//                .startSession(
-//                    with: UserIdImpl(id: 0) // todo request
-//                )
-            
-            return .success(())
-        } else {
-            return .failure(PBError.authError("test"))
-        }
+    private func bindSessionManager() {
+        SessionManagerImpl
+            .shared
+            .currentUserPublisher
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] authState in
+                switch authState {
+                case .loading:
+                    self?.state = .loading
+                case .loggedIn:
+                    self?.state = .succeeded
+                case .loggedOut:
+                    if case .loading = self?.state {
+                        self?.state = .none
+                    }
+                }
+            }
+            .store(in: &cancellables)
     }
 }

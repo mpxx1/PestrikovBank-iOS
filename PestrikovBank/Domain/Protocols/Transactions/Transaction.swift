@@ -7,9 +7,8 @@
 
 import Foundation
 
-public protocol Transaction: Identifiable {
-    typealias Identifier = Int64
-    var id: Identifier { get }
+public protocol Transaction {
+    var id: Int { get }
     var sourceUserId: Int64 { get }
     var destinationUserId: Int64 { get }
     var amount: Decimal { get }

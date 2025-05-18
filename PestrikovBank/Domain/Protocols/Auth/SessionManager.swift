@@ -7,8 +7,8 @@
 
 import Combine
 
-public protocol SessionManager {
-    var currentUserPublisher: AnyPublisher<AuthState, Never> { get }
-    func login(creds: Creds) -> AnyPublisher<AuthState, Error>
+protocol SessionManager {
+    var currentUserPublisher: CurrentValueSubject<AuthState, Never> { get }
+    func login(creds: AuthCreds) -> AnyPublisher<AuthState, Error>
     func logout() -> AnyPublisher<AuthState, Never>
 }

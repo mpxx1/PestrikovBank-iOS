@@ -30,6 +30,8 @@ public final class SignUpFormView: UIView {
         let tf = UITextField()
         tf.placeholder = "Password"
         tf.font = .systemFont(ofSize: 22)
+        tf.autocapitalizationType = .none
+        tf.isSecureTextEntry = true
         return tf
     }()
     
@@ -52,6 +54,17 @@ public final class SignUpFormView: UIView {
         btn.titleLabel!.font = UIFont(name: "Helvetica", size: 18)
         return btn
     }()
+    
+    private var activityIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: .large)
+        if UIScreen.main.traitCollection.userInterfaceStyle == .dark {
+            indicator.tintColor = .white
+        } else {
+            indicator.color = #colorLiteral(red: 0.5440881252, green: 0, blue: 0, alpha: 1)
+        }
+        indicator.hidesWhenStopped = true
+        return indicator
+    }()
 
     private var stackView: UIStackView!
     
@@ -69,6 +82,7 @@ public final class SignUpFormView: UIView {
         super.traitCollectionDidChange(previousTraitCollection)
         if previousTraitCollection?.userInterfaceStyle != traitCollection.userInterfaceStyle {
             updateButtonColors()
+            updateActivityIndicatorColor()
         }
     }
 
@@ -78,7 +92,8 @@ public final class SignUpFormView: UIView {
             phoneField,
             passwordField,
             confirmPasswordField,
-            signUpButton
+            signUpButton,
+            activityIndicator
         ])
         stackView.axis = .vertical
         stackView.spacing = 30
@@ -102,6 +117,26 @@ public final class SignUpFormView: UIView {
         }
 
         signUpButton.tintColor = tint
+    }
+    
+    private func updateActivityIndicatorColor() {
+        let color: UIColor
+        if traitCollection.userInterfaceStyle == .dark {
+            color = .white
+        } else {
+            color = #colorLiteral(red: 0.5440881252, green: 0, blue: 0, alpha: 1)
+        }
+        activityIndicator.color = color
+    }
+    
+    func showLoading(_ show: Bool) {
+        if show {
+            activityIndicator.startAnimating()
+            signUpButton.isHidden = true
+        } else {
+            activityIndicator.stopAnimating()
+            signUpButton.isHidden = false
+        }
     }
 }
 

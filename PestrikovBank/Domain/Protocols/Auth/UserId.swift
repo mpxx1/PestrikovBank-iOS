@@ -5,6 +5,6 @@
 //  Created by m on 16.05.2025.
 //
 
-public protocol UserId: Identifiable {
+protocol UserId: Codable {
     var id: Int { get }
 }

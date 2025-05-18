@@ -7,8 +7,9 @@
 
 import Foundation
 
-public protocol Card: Identifiable {
-    typealias Identifier = String   // card number
-    var id: Identifier { get }
-    var expirationDate: Date { get }
+protocol Card {
+    var id: String { get }  // card number
+    var expireMonth: Int { get }
+    var expireYear: Int { get }
+    var designUrl: URL { get }
 }

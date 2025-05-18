@@ -15,6 +15,6 @@ public class AccountsTabCoordinator: RouteCoordinator {
     }
     
     public func start() {
-        // todo
+        
     }
 }

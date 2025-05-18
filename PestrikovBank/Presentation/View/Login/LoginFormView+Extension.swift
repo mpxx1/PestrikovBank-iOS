@@ -30,6 +30,8 @@ final class LoginFormView: UIView {
         let tf = UITextField()
         tf.placeholder = "Password"
         tf.font = .systemFont(ofSize: 22)
+        tf.autocapitalizationType = .none
+        tf.isSecureTextEntry = true
         return tf
     }()
 
@@ -57,6 +59,17 @@ final class LoginFormView: UIView {
         btn.titleLabel!.font = UIFont(name: "Helvetica", size: 18)
         return btn
     }()
+    
+    private var activityIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: .large)
+        if UIScreen.main.traitCollection.userInterfaceStyle == .dark {
+            indicator.tintColor = .white
+        } else {
+            indicator.color = #colorLiteral(red: 0.5440881252, green: 0, blue: 0, alpha: 1)
+        }
+        indicator.hidesWhenStopped = true
+        return indicator
+    }()
 
     private var stackView: UIStackView!
     
@@ -74,6 +87,7 @@ final class LoginFormView: UIView {
         super.traitCollectionDidChange(previousTraitCollection)
         if previousTraitCollection?.userInterfaceStyle != traitCollection.userInterfaceStyle {
             updateButtonColors()
+            updateActivityIndicatorColor()
         }
     }
 
@@ -83,6 +97,7 @@ final class LoginFormView: UIView {
             phoneField,
             passwordField,
             loginButton,
+            activityIndicator,
             signUpButton
         ])
         stackView.axis = .vertical
@@ -108,6 +123,26 @@ final class LoginFormView: UIView {
 
         [loginButton, signUpButton].forEach {
             $0.tintColor = tint
+        }
+    }
+    
+    private func updateActivityIndicatorColor() {
+        let color: UIColor
+        if traitCollection.userInterfaceStyle == .dark {
+            color = .white
+        } else {
+            color = #colorLiteral(red: 0.5440881252, green: 0, blue: 0, alpha: 1)
+        }
+        activityIndicator.color = color
+    }
+    
+    func showLoading(_ show: Bool) {
+        if show {
+            activityIndicator.startAnimating()
+            loginButton.isHidden = true
+        } else {
+            activityIndicator.stopAnimating()
+            loginButton.isHidden = false
         }
     }
 }

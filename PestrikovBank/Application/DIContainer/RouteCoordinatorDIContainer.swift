@@ -9,8 +9,7 @@ import UIKit
 
 public class RouteCoordinatorDIContainer {
     struct Dependencies {
-        let loginViewController: UIViewController
-        let signUpViewController: UIViewController
+        let controllerDIContainer: ViewControllerDIContainer
     }
     
     private let dependencies: Dependencies
@@ -21,13 +20,13 @@ public class RouteCoordinatorDIContainer {
     
     lazy var loginCooridnator: RouteCoordinator = {
         return LoginCoordinator(
-            loginViewController: dependencies.loginViewController,
-            signUpViewController: dependencies.signUpViewController
+            loginViewController: dependencies.controllerDIContainer.loginViewController,
+            signUpViewController: dependencies.controllerDIContainer.signUpViewController
         )
     }()
     
     lazy var accountsTabCoordinator: RouteCoordinator = {
-        return AccountsTabCoordinator(rootViewController: UIViewController())
+        return AccountsTabCoordinator(rootViewController: WalletViewController())
     }()
     
     lazy var transactionsTabCoordinator: RouteCoordinator = {

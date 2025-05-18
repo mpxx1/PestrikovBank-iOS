@@ -17,9 +17,11 @@ enum SignUpState {
 }
 
 public final class SignUpViewModel {
-    
+
+    private var cancellables: Set<AnyCancellable> = []
+    private var signUpUseCase: SignUpUseCase
     private var phoneFromat: PhoneFormat
-    @Published var state: LoginState = .none
+    @Published var state: SignUpState = .none
     @Published var phoneNumber = ""
     @Published var secret = ""
     @Published var confirmSecret = ""
@@ -57,40 +59,34 @@ public final class SignUpViewModel {
         .eraseToAnyPublisher()
     }
     
-    init(phoneFormatter: PhoneFormat) {
+    init(phoneFormatter: PhoneFormat, signUpUseCase: SignUpUseCase) {
         self.phoneFromat = phoneFormatter
+        self.signUpUseCase = signUpUseCase
     }
     
     func submitSignUp() {
         state = .loading
         
-        DispatchQueue
-            .main
-            .async { [weak self] in
-                
-                guard let self else { return }
-                
-                switch self.processSignUp() {
-                case .success:
-                    self.state = .succeeded
+        signUpUseCase
+            .execute(
+                creds: AuthCredsImpl(
+                    phoneNumber: phoneNumber,
+                    password: secret
+                )
+            )
+            .sink { [weak self] completion in
+                switch completion {
+                case .finished:
+                    break
                 case .failure(let error):
-                    self.state = .failed(error)
+                    self?.state = .failed(error)
                 }
+            } receiveValue: { [weak self] user in
+
+                self?.state = .succeeded
             }
-    }
-    
-    func processSignUp() -> Result<Void, Error> {
-        // sign up request
-        // create creds object
-        // pass it to async servier request use case
-        
-        let tmp = true
-        
-        if tmp {
-            return .success(())
-        } else {
-            return .failure(PBError.authError("test"))
-        }
+            .store(in: &cancellables)
+
     }
 }
 

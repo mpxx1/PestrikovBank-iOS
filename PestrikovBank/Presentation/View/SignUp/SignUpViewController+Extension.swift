@@ -123,21 +123,25 @@ public final class SignUpViewController: UIViewController {
                                 
                 switch state {
                 case .loading:
+                    self?.signUpForm.showLoading(true)
                     self?.signUpForm.signUpButton.isEnabled = false
                     self?.signUpForm.signUpButton.titleLabel?.text = "Loading..."
                 case .failed(let error):
-                    self?.showErrorAlert(message: error.localizedDescription)
+                    self?.signUpForm.showLoading(false)
+                    self?.showAlert(title: "Error", message: error.localizedDescription)
                 case .succeeded:
-                    break
+                    self?.signUpForm.showLoading(false)
+                    self?.showAlert(title: "Success", message: "Registration complete")
                 case .none:
+                    self?.signUpForm.showLoading(false)
                     break
                 }
             }
             .store(in: &cancellables)
     }
     
-    private func showErrorAlert(message: String) {
-        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+    private func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "ОК", style: .default))
         present(alert, animated: true)
     }

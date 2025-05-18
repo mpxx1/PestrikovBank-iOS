@@ -9,30 +9,44 @@ import UIKit
 
 public class AppDIContainer {
     
+    lazy var appConfiguration = AppConfig()
+    lazy var jsonEncoder = JSONEncoder()
+    
+    lazy var networkerFactory: NetworkerDIContainer = {
+        return NetworkerDIContainer()
+    }()
+    
     lazy var stringFormatDIContainer: StringFormatDIContainer = {
         return StringFormatDIContainer()
     }()
     
+    lazy var useCasesDIContainer: UseCasesDIContainer = {
+        return UseCasesDIContainer(
+            dependencies: UseCasesDIContainer.Dependencies(
+                networkerDI: NetworkerDIContainer(),
+                jsonEncoder: jsonEncoder
+            )
+        )
+    }()
+    
     lazy var viewModelDIContainer: ViewModelDIContainer = {
         return ViewModelDIContainer(dependencies: ViewModelDIContainer.Dependencies(
-            phoneFormatter: stringFormatDIContainer.phoneNumberFormatter
+            phoneFormatter: stringFormatDIContainer.phoneNumberFormatter,
+            signUpUseCase: useCasesDIContainer.signUpUseCase
         ))
     }()
 
     lazy var viewDIContainer: ViewDIContainer = {
         return ViewDIContainer(dependencies: ViewDIContainer.Dependencies(
-            loginViewModel: viewModelDIContainer.loginViewModel,
-            signUpViewModel: viewModelDIContainer.signUpViewModel
+            modelDIContainer: viewModelDIContainer
         ))
     }()
     
     lazy var viewControllerDIContainer: ViewControllerDIContainer = {
         return ViewControllerDIContainer(
             dependencies: ViewControllerDIContainer.Dependencies(
-                loginForm: viewDIContainer.loginForm,
-                loginViewModel: viewModelDIContainer.loginViewModel,
-                signUpForm: viewDIContainer.signUpForm,
-                signUpViewModel: viewModelDIContainer.signUpViewModel
+                viewDIContainer: viewDIContainer,
+                modelDIContainer: viewModelDIContainer
             )
         )
     }()
@@ -40,8 +54,7 @@ public class AppDIContainer {
     lazy var routeCoordinatorDIContainer: RouteCoordinatorDIContainer = {
         return RouteCoordinatorDIContainer(
             dependencies: RouteCoordinatorDIContainer.Dependencies(
-                loginViewController: viewControllerDIContainer.loginViewController,
-                signUpViewController: viewControllerDIContainer.signUpViewController
+                controllerDIContainer: viewControllerDIContainer
             )
         )
     }()

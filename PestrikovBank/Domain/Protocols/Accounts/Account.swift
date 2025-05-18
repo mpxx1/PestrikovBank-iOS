@@ -7,11 +7,10 @@
 
 import Foundation
 
-public protocol Account: Identifiable {
-    typealias Identifier = UUID
-    var id: Identifier { get }
-    var balance: Decimal { get }
-    var currency: String { get }
-    var cards: [any Card] { get }
-    var transactions: [any Transaction] { get }
+public protocol Account: Codable {
+    var id: Int { get }
+    var amount: Decimal { get }
+    var variant: AccountVariant { get }
+    var createdAt: Date { get }
 }
+

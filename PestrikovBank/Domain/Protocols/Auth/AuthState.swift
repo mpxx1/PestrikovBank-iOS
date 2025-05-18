@@ -6,6 +6,7 @@
 //
 
 public enum AuthState {
-    case loggedIn(any User)
+    case loggedIn(UserImpl)
+    case loading
     case loggedOut
 }

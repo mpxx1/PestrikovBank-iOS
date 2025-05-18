@@ -9,8 +9,7 @@ import UIKit
 
 public class ViewDIContainer {
     struct Dependencies {
-        let loginViewModel: LoginViewModel
-        let signUpViewModel: SignUpViewModel
+        let modelDIContainer: ViewModelDIContainer
     }
     
     private var dependencies: Dependencies
@@ -22,14 +21,20 @@ public class ViewDIContainer {
     lazy var loginForm: LoginFormView = {
         return LoginFormView(
             frame: UIScreen.main.bounds,
-            phoneNumberFormatting: dependencies.loginViewModel.phoneFormat()
+            phoneNumberFormatting: dependencies
+                .modelDIContainer
+                .loginViewModel
+                .phoneFormat()
         )
     }()
     
     lazy var signUpForm: SignUpFormView = {
         return SignUpFormView(
             frame: UIScreen.main.bounds,
-            phoneNumberFormatting: dependencies.signUpViewModel.phoneFormat()
+            phoneNumberFormatting: dependencies
+                .modelDIContainer
+                .signUpViewModel
+                .phoneFormat()
         )
     }()
 }

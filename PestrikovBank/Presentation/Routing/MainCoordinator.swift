@@ -67,7 +67,8 @@ public class MainCoordinator: RouteCoordinator {
                 )
             case 2:
                 setupChildController(
-                    vc: vc, title: "Transactions",
+                    vc: vc,
+                    title: "Transactions",
                     imageName: "clock",
                     selectedImageName: "clock.fill"
                 )
