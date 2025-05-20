@@ -7,9 +7,9 @@
 
 import UIKit
 
-public class AboutAccountViewControler: UIViewController {
+public class AccountDetailsViewControler: UIViewController {
     private let viewModel: AccountsViewModel
-    private var form: AboutAccountFormView!
+    private var form: AccountDetailsFormView!
 
     init(viewModel: AccountsViewModel) {
         self.viewModel = viewModel
@@ -27,7 +27,7 @@ public class AboutAccountViewControler: UIViewController {
     
     private func setupView() {
         view.backgroundColor = .systemBackground
-        form = AboutAccountFormView(frame: .zero, viewModel: viewModel)
+        form = AccountDetailsFormView(frame: .zero, viewModel: viewModel)
         view.addSubview(form)
         form.translatesAutoresizingMaskIntoConstraints = false
                 

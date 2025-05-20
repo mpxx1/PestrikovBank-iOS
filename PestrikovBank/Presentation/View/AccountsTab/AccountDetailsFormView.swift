@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-public class AboutAccountFormView: UIView {
+public class AccountDetailsFormView: UIView {
     private var viewModel: AccountsViewModel
     private var cancellables = Set<AnyCancellable>()
     

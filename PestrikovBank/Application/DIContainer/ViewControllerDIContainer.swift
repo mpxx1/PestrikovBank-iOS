@@ -40,7 +40,7 @@ public class ViewControllerDIContainer {
     }()
     
     lazy var accountDetailsViewController: UIViewController = {
-        return AboutAccountViewControler(
+        return AccountDetailsViewControler(
             viewModel: dependencies.modelDIContainer.accountsViewModel
         )
     }()
