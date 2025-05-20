@@ -93,8 +93,15 @@ public struct TextFieldComponent: Component {
             default:
                 fatalError("Unknown identifier \(identifier)")
             }
+            
+        case .accounts:
+            break   // unimplemented
+        case .userDetails:
+            break   // unimplemented
         }
     }
     
-    public func switchTheme() {}
+    public func setupConstraints(in container: UIView, preset: ConstraintPreset) {
+        setupConstraintsDefault(self, in: container, preset: preset)
+    }
 }

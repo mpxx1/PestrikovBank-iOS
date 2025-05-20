@@ -35,11 +35,7 @@ public struct ButtonComponent: Component {
         let btn = UIButton(type: config.buttonType)
         btn.setTitle(config.title, for: config.uiControlState)
         btn.isEnabled = config.isEnabled
-        if UIScreen.main.traitCollection.userInterfaceStyle == .dark {
-            btn.tintColor = config.onDarkTextColor
-        } else {
-            btn.tintColor = config.onLightTextColor
-        }
+        
         btn.titleLabel!.font = UIFont(name: config.fontName, size: config.fontSize)
         buttonView = btn
         self.config = config
@@ -86,14 +82,14 @@ public struct ButtonComponent: Component {
             default:
                 fatalError("Unknown identifier \(identifier)")
             }
+        case .accounts:
+            break   // unimplemented
+        case .userDetails:
+            break   // unimplemented
         }
     }
     
-    public func switchTheme() {
-        if UIScreen.main.traitCollection.userInterfaceStyle == .dark {
-            buttonView.tintColor = config.onDarkTextColor
-        } else {
-            buttonView.tintColor = config.onLightTextColor
-        }
+    public func setupConstraints(in container: UIView, preset: ConstraintPreset) {
+        setupConstraintsDefault(self, in: container, preset: preset)
     }
 }

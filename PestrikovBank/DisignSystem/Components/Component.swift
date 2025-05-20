@@ -12,5 +12,5 @@ public protocol Component {
     var view: UIView { get }
     
     mutating func bind(to viewModel: AnyObject, of type: ViewModelType)
-    func switchTheme()
+    func setupConstraints(in container: UIView, preset: ConstraintPreset)
 }

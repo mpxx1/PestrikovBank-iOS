@@ -46,11 +46,7 @@ public struct ActivityIndicatorComponent: Component {
 //        }
     }
     
-    public func switchTheme() {
-        if UIScreen.main.traitCollection.userInterfaceStyle == .dark {
-            indicatorView.tintColor = config.onDarkColor
-        } else {
-            indicatorView.color = config.onLightColor
-        }
+    public func setupConstraints(in container: UIView, preset: ConstraintPreset) {
+        setupConstraintsDefault(self, in: container, preset: preset)
     }
 }

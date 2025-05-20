@@ -8,4 +8,6 @@
 public enum ViewModelType {
     case login
     case signUp
+    case accounts
+    case userDetails
 }
