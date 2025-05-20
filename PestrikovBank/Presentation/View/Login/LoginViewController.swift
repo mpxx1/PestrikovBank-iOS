@@ -92,11 +92,11 @@ public final class LoginViewController: UIViewController {
             .passwordField
             .publisher(for: .editingChanged)
             .compactMap { ($0 as! UITextField).text ?? "" }
-            .assign(to: \.secret, on: viewModel)
+            .assign(to: \.password, on: viewModel)
             .store(in: &cancellables)
         
         viewModel
-            .$secret
+            .$password
             .receive(on: DispatchQueue.main)
             .sink { [weak self] newSecret in
                 self?.loginForm.passwordField.text = newSecret
@@ -115,7 +115,20 @@ public final class LoginViewController: UIViewController {
             .signUpButton
             .publisher(for: .touchUpInside)
             .sink { [weak self] _ in
-                self?.onSignUpTapped?()
+                self?
+                    .viewModel
+                    .didTapSignUpButton()
+            }
+            .store(in: &cancellables)
+        
+        viewModel
+            .onSignUpTapped
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] action in
+                switch action {
+                case .signUp:
+                    self?.onSignUpTapped?()
+                }
             }
             .store(in: &cancellables)
 

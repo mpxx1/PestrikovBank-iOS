@@ -19,13 +19,13 @@ struct FetchAccountsUseCaseImpl: FetchAccountsUseCase {
         self.encoder = encoder
     }
     
-    func execute(user: any UserId) -> AnyPublisher<[AccountImpl], any Error> {
+    func execute(user: any UserId) -> AnyPublisher<Accounts, any Error> {
         let data = try! encoder.encode(user)
         let jsonEndpoint = networkerDi.makeJsonEndpoint(encoded: data, path: "/accounts/list")
-        
+            
         return networker
             .request(jsonEndpoint)
-            .catch { error -> AnyPublisher<[AccountImpl], Error> in
+            .catch { error -> AnyPublisher<Accounts, Error> in
                 Fail(error: PBError.sth("Request failed, try again later"))
                     .eraseToAnyPublisher()
             }

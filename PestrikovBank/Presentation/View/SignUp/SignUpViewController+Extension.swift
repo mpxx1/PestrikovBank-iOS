@@ -93,7 +93,7 @@ public final class SignUpViewController: UIViewController {
             .passwordField
             .publisher(for: .editingChanged)
             .compactMap { ($0 as! UITextField).text ?? "" }
-            .assign(to: \.secret, on: viewModel)
+            .assign(to: \.password, on: viewModel)
             .store(in: &cancellables)
         
         signUpForm

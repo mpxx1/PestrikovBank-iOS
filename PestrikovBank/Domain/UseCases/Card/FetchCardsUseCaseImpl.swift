@@ -19,13 +19,13 @@ struct FetchCardsUseCaseImpl: FetchCardsUseCase {
         self.encoder = encoder
     }
     
-    func execute(user: UserId) -> AnyPublisher<[CardImpl], any Error> {
+    func execute(user: UserId) -> AnyPublisher<Cards, any Error> {
         let data = try! encoder.encode(user)
-        let jsonEndpoint = networkerDi.makeJsonEndpoint(encoded: data, path: "/user/signup")
+        let jsonEndpoint = networkerDi.makeJsonEndpoint(encoded: data, path: "/cards/list")
         
         return networker
             .request(jsonEndpoint)
-            .catch { error -> AnyPublisher<[CardImpl], Error> in
+            .catch { error -> AnyPublisher<Cards, Error> in
                 Fail(error: PBError.sth("Request failed, try again later"))
                     .eraseToAnyPublisher()
             }

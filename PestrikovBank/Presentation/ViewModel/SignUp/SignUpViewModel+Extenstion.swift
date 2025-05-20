@@ -23,7 +23,7 @@ public final class SignUpViewModel {
     private var phoneFromat: PhoneFormat
     @Published var state: SignUpState = .none
     @Published var phoneNumber = ""
-    @Published var secret = ""
+    @Published var password = ""
     @Published var confirmSecret = ""
     
     var isValidPhoneNumber: AnyPublisher<Bool, Never> {
@@ -33,7 +33,7 @@ public final class SignUpViewModel {
     }
     
     var isValidSecret: AnyPublisher<Bool, Never> {
-        $secret
+        $password
             .map { !$0.isEmpty }
             .eraseToAnyPublisher()
     }
@@ -47,14 +47,14 @@ public final class SignUpViewModel {
     var isSignUpEnabled: AnyPublisher<Bool, Never> {
         Publishers.CombineLatest3(
             $phoneNumber.prepend(""),
-            $secret.prepend(""),
+            $password.prepend(""),
             $confirmSecret.prepend("")
         )
-        .map { phone, secret, confirm in
+        .map { phone, password, confirm in
             phone.isValidPhoneNumber() &&
-            !secret.isEmpty &&
+            !password.isEmpty &&
             !confirm.isEmpty &&
-            secret == confirm
+            password == confirm
         }
         .eraseToAnyPublisher()
     }
@@ -71,7 +71,7 @@ public final class SignUpViewModel {
             .execute(
                 creds: AuthCredsImpl(
                     phoneNumber: phoneNumber,
-                    password: secret
+                    password: password
                 )
             )
             .sink { [weak self] completion in

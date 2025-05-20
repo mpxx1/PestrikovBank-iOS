@@ -8,5 +8,5 @@
 import Combine
 
 protocol FetchAccountsUseCase {
-    func execute(user: UserId) -> AnyPublisher<[AccountImpl], Error>
+    func execute(user: UserId) -> AnyPublisher<Accounts, Error>
 }

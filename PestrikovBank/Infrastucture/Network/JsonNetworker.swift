@@ -38,6 +38,9 @@ final class JsonNetworker: Networker {
             }
             .decode(type: T.self, decoder: jsonDecoder)
             .mapError { error -> Error in
+                
+                print(error) // возникает ошибка
+
                 if let decodingError = error as? DecodingError {
                     return PBError.network(decodingError)
                 }

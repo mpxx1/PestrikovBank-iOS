@@ -10,7 +10,7 @@ import UIKit
 public class ViewModelDIContainer {
     struct Dependencies {
         let phoneFormatter: PhoneFormat
-        let signUpUseCase: SignUpUseCase
+        let useCasesDIContainer: UseCasesDIContainer
     }
     
     private var dependencies: Dependencies
@@ -28,7 +28,14 @@ public class ViewModelDIContainer {
     lazy var signUpViewModel: SignUpViewModel = {
         return SignUpViewModel(
             phoneFormatter: dependencies.phoneFormatter,
-            signUpUseCase: dependencies.signUpUseCase
+            signUpUseCase: dependencies.useCasesDIContainer.signUpUseCase
+        )
+    }()
+    
+    lazy var accountsViewModel: AccountsViewModel = {
+        return AccountsViewModel(
+            fetchAccountsUseCase: dependencies.useCasesDIContainer.fetchAccountsUseCase,
+            fetchCardsUseCase: dependencies.useCasesDIContainer.fetchCardsUseCase
         )
     }()
 }

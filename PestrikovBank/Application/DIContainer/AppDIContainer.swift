@@ -32,7 +32,7 @@ public class AppDIContainer {
     lazy var viewModelDIContainer: ViewModelDIContainer = {
         return ViewModelDIContainer(dependencies: ViewModelDIContainer.Dependencies(
             phoneFormatter: stringFormatDIContainer.phoneNumberFormatter,
-            signUpUseCase: useCasesDIContainer.signUpUseCase
+            useCasesDIContainer: useCasesDIContainer
         ))
     }()
 
@@ -54,7 +54,9 @@ public class AppDIContainer {
     lazy var routeCoordinatorDIContainer: RouteCoordinatorDIContainer = {
         return RouteCoordinatorDIContainer(
             dependencies: RouteCoordinatorDIContainer.Dependencies(
-                controllerDIContainer: viewControllerDIContainer
+                controllerDIContainer: viewControllerDIContainer,
+                viewModelDIContainer: viewModelDIContainer,
+                networkDIContainer: NetworkerDIContainer()
             )
         )
     }()

@@ -10,6 +10,8 @@ import UIKit
 public class RouteCoordinatorDIContainer {
     struct Dependencies {
         let controllerDIContainer: ViewControllerDIContainer
+        let viewModelDIContainer: ViewModelDIContainer
+        let networkDIContainer: NetworkerDIContainer
     }
     
     private let dependencies: Dependencies
@@ -26,7 +28,14 @@ public class RouteCoordinatorDIContainer {
     }()
     
     lazy var accountsTabCoordinator: RouteCoordinator = {
-        return AccountsTabCoordinator(rootViewController: WalletViewController())
+        return AccountsTabCoordinator(
+            accountsViewController: dependencies
+                .controllerDIContainer
+                .accountsViewController,
+            aboutAccountViewModel: dependencies
+                .viewModelDIContainer
+                .accountsViewModel
+        )
     }()
     
     lazy var transactionsTabCoordinator: RouteCoordinator = {

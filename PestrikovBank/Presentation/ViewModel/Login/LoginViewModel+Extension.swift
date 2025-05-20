@@ -16,13 +16,19 @@ enum LoginState {
     case failed(Error)
 }
 
+enum LoginNavigateTo {
+    case signUp
+}
+
 public final class LoginViewModel: PhoneFormat {
     
     private var cancellables: Set<AnyCancellable> = []
     private var phoneFormatter: PhoneFormat
+    var onSignUpTapped = PassthroughSubject<LoginNavigateTo, Never>()
+    
     @Published var state: LoginState = .none
     @Published var phoneNumber = ""
-    @Published var secret = ""
+    @Published var password = ""
     
     var isValidPhoneNumber: AnyPublisher<Bool, Never> {
         $phoneNumber
@@ -31,7 +37,7 @@ public final class LoginViewModel: PhoneFormat {
     }
     
     var isValidSecret: AnyPublisher<Bool, Never> {
-        $secret
+        $password
             .map { !$0.isEmpty }
             .eraseToAnyPublisher()
     }
@@ -55,7 +61,7 @@ public final class LoginViewModel: PhoneFormat {
         
         SessionManagerImpl
             .shared
-            .login(creds: AuthCredsImpl(phoneNumber: phoneNumber, password: secret))
+            .login(creds: AuthCredsImpl(phoneNumber: phoneNumber, password: password))
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { [weak self] completion in
                 switch completion {
@@ -63,7 +69,7 @@ public final class LoginViewModel: PhoneFormat {
                     break
                 case .failure(let error):
                     self?.state = .failed(error)
-                    self?.secret = ""
+                    self?.password = ""
                 }
             }, receiveValue: { [weak self] authState in
                 switch authState {
@@ -76,6 +82,11 @@ public final class LoginViewModel: PhoneFormat {
                 }
             })
             .store(in: &cancellables)
+    }
+    
+    public func didTapSignUpButton() {
+        onSignUpTapped
+            .send(.signUp)
     }
     
     public var maxLength: Int {

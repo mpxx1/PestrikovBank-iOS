@@ -32,4 +32,16 @@ public class ViewControllerDIContainer {
             signUpViewModel: dependencies.modelDIContainer.signUpViewModel
         )
     }()
+    
+    lazy var accountsViewController: UIViewController = {
+        return AccountsViewController(
+            viewModel: dependencies.modelDIContainer.accountsViewModel
+        )
+    }()
+    
+    lazy var accountDetailsViewController: UIViewController = {
+        return AboutAccountViewControler(
+            viewModel: dependencies.modelDIContainer.accountsViewModel
+        )
+    }()
 }

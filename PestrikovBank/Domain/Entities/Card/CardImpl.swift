@@ -7,11 +7,15 @@
 
 import Foundation
 
-struct CardImpl: Card, Codable {
+public struct Cards: Codable {
+    let cards: [CardImpl]
+}
+
+public struct CardImpl: Card, Codable {
     var id: String
     var expireMonth: Int
     var expireYear: Int
-    var designUrl: URL
+    var designUrl: String
     
     enum CodingKeys: String, CodingKey {
         case id

@@ -40,7 +40,7 @@ final class UseCasesDIContainer {
             encoder: dependencies.jsonEncoder
         )
     }()
-//
+
 //    lazy var fetchTransactionsUseCase: FetchTransactionsUseCase = {
 //    
 //    }()

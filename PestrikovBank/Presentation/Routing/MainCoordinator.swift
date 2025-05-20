@@ -19,6 +19,9 @@ public class MainCoordinator: RouteCoordinator {
     ) {
         let tabBarController = UITabBarController()
         
+        let tabBar = tabBarController.tabBar
+        tabBar.isTranslucent = false
+        
         let dynamicTint = UIColor { trait in
             switch trait.userInterfaceStyle {
             case .dark:
@@ -28,6 +31,19 @@ public class MainCoordinator: RouteCoordinator {
             }
         }
         tabBarController.tabBar.tintColor = dynamicTint
+        
+        let appearance = UITabBarAppearance()
+        appearance.configureWithTransparentBackground()
+        
+        let blurEffect = UIBlurEffect(style: .systemMaterial)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.frame = tabBar.bounds
+        blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        tabBar.insertSubview(blurView, at: 0)
+        
+        tabBar.standardAppearance = appearance
+        tabBar.scrollEdgeAppearance = appearance
         
         self.rootViewController = tabBarController
         childCoordinators = [

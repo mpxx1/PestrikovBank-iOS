@@ -11,5 +11,5 @@ protocol Card {
     var id: String { get }  // card number
     var expireMonth: Int { get }
     var expireYear: Int { get }
-    var designUrl: URL { get }
+    var designUrl: String { get }
 }

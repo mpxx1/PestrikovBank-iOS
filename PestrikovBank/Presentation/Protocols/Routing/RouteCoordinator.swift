@@ -7,13 +7,7 @@
 
 import UIKit
 
-public enum FlowVariant {
-    case login
-    case main
-}
-
 public protocol RouteCoordinator: AnyObject {
     var rootViewController: UIViewController { get }
     func start()
-//    func goBack(animated: Bool)
 }

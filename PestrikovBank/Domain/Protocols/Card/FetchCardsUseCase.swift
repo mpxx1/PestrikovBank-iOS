@@ -8,5 +8,5 @@
 import Combine
 
 protocol FetchCardsUseCase {
-    func execute(user: UserId) -> AnyPublisher<[CardImpl], Error>
+    func execute(user: UserId) -> AnyPublisher<Cards, Error>
 }
