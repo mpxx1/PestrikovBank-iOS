@@ -9,7 +9,7 @@ import UIKit
 import Combine
 
 public struct TextFieldComponentConfig {
-    let identifier: String
+    let id: String
     let placeholder: String
     let keyboardType: UIKeyboardType
     let fontSize: CGFloat
@@ -18,83 +18,31 @@ public struct TextFieldComponentConfig {
     let isSecureTextEntry: Bool
 }
 
-public struct TextFieldComponent: Component {
-    public var identifier: String
-    public var view: UIView { textFieldView }
-    private var textFieldView: UITextField
-    private var cancellables = Set<AnyCancellable>()
+public class TextFieldComponent: UITextField, Component {
+    public var id: String
     
     init(
         config: TextFieldComponentConfig
     ) {
-        self.identifier = config.identifier
+        self.id = config.id
+        super.init(frame: .zero)
         
-        let textField = UITextField()
-        textField.placeholder = config.placeholder
-        textField.keyboardType = config.keyboardType
-        textField.font = .systemFont(ofSize: config.fontSize, weight: config.fontWeight)
-        textField.autocapitalizationType = config.autocapitalizationType
-        textField.isSecureTextEntry = config.isSecureTextEntry
-        textFieldView = textField
+        placeholder = config.placeholder
+        keyboardType = config.keyboardType
+        font = .systemFont(ofSize: config.fontSize, weight: config.fontWeight)
+        autocapitalizationType = config.autocapitalizationType
+        isSecureTextEntry = config.isSecureTextEntry
     }
     
-    public mutating func bind(to viewModel: AnyObject, of type: ViewModelType) {
-        switch type {
-        case .login:
-            guard let viewModel = viewModel as? LoginViewModel else { return }
-            
-            switch identifier {
-            case "phone_number_text_field":
-                textFieldView
-                    .publisher(for: .editingChanged)
-                    .compactMap { ($0 as! UITextField).text }
-                    .assign(to: \.phoneNumber, on: viewModel)
-                    .store(in: &cancellables)
-            
-            case "password_text_field":
-                textFieldView
-                    .publisher(for: .editingChanged)
-                    .compactMap { ($0 as! UITextField).text }
-                    .assign(to: \.phoneNumber, on: viewModel)
-                    .store(in: &cancellables)
-                
-                viewModel
-                    .$password
-                    .receive(on: DispatchQueue.main)
-                    .sink { [self] newPassword in
-                        self.textFieldView.text = newPassword
-                    }
-                    .store(in: &cancellables)
-                
-            default:
-                fatalError("Unknown identifier \(identifier)")
-            }
-            
-        case .signUp:
-            guard let viewModel = viewModel as? SignUpViewModel else { return }
-            
-            switch identifier {
-            case "phone_number_text_field":
-                textFieldView
-                    .publisher(for: .editingChanged)
-                    .compactMap { ($0 as! UITextField).text }
-                    .assign(to: \.phoneNumber, on: viewModel)
-                    .store(in: &cancellables)
-                
-            case "password_text_field":
-                textFieldView
-                    .publisher(for: .editingChanged)
-                    .compactMap { ($0 as! UITextField).text }
-                    .assign(to: \.phoneNumber, on: viewModel)
-                    .store(in: &cancellables)
-                
-//            case "confirm_password_text_field":
-                
-            default:
-                fatalError("Unknown identifier \(identifier)")
-            }
-        }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
-    public func switchTheme() {}
+    public func bind(to viewModel: ViewModelType) {
+        
+    }
+    
+    public func setupConstraints(in container: UIView, preset: ConstraintPreset) {
+        setupConstraintsDefault(self, in: container, preset: preset)
+    }
 }

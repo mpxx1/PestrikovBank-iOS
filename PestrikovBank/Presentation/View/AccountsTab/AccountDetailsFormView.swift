@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-public class AboutAccountFormView: UIView {
+public class AccountDetailsFormView: UIView {
     private var viewModel: AccountsViewModel
     private var cancellables = Set<AnyCancellable>()
     
@@ -193,7 +193,6 @@ public class AboutAccountFormView: UIView {
                     self.created.isHidden = true
                     
                     let emptyLabel = UILabel()
-//                    emptyLabel.text = "No account selected"
                     emptyLabel.textAlignment = .center
                     emptyLabel.translatesAutoresizingMaskIntoConstraints = false
                     self.addSubview(emptyLabel)
@@ -221,8 +220,6 @@ public class AboutAccountFormView: UIView {
                 }
             }
             .store(in: &cancellables)
-        
-        
     }
     
     private func setPlaceholderCardImage(for account: AccountImpl) {

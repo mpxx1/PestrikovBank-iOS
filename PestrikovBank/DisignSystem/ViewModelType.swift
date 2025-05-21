@@ -6,6 +6,6 @@
 //
 
 public enum ViewModelType {
-    case login
-    case signUp
+    case accountsViewModel(AccountsViewModel)
+//    case userDetailsViewModel(UserDetailsViewModel)
 }

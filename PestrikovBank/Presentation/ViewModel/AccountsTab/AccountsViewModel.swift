@@ -38,9 +38,9 @@ public enum AccountsNavigateTo {
 }
 
 public class AccountsViewModel {
-    private var cancellables = Set<AnyCancellable>()
     private var fetchAccountsUseCase: FetchAccountsUseCase
     private var fetchCardsUseCase: FetchCardsUseCase
+    public var cancellables = Set<AnyCancellable>()
     
     @Published public var accountsLoadingState: UserAccountsLoadingState = .none
     @Published public var cardsLoadingState: CardsLoadingState = .none

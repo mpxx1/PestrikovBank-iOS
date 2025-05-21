@@ -10,8 +10,9 @@ import Combine
 
 public final class SignUpViewController: UIViewController {
     
-    private var signUpForm: SignUpFormView
+    private var signUpForm: SignUpFormView!
     private var viewModel: SignUpViewModel
+    private var viewDIContainer: ViewDIContainer
     private var cancellables = Set<AnyCancellable>()
     
     private let backgroundImageView: UIImageView = {
@@ -22,10 +23,10 @@ public final class SignUpViewController: UIViewController {
     }()
     
     init(
-        signUpForm: SignUpFormView,
+        viewDIContainer: ViewDIContainer,
         signUpViewModel: SignUpViewModel
     ) {
-        self.signUpForm = signUpForm
+        self.viewDIContainer = viewDIContainer
         self.viewModel = signUpViewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -36,6 +37,8 @@ public final class SignUpViewController: UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.signUpForm = viewDIContainer.signUpForm
         
         backgroundImageView.frame = view.bounds
         view.addSubview(backgroundImageView)
