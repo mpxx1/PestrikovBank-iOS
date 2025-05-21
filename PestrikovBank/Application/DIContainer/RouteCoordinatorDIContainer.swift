@@ -11,6 +11,7 @@ public class RouteCoordinatorDIContainer {
     struct Dependencies {
         let controllerDIContainer: ViewControllerDIContainer
         let viewModelDIContainer: ViewModelDIContainer
+        let viewDIContainer: ViewDIContainer
         let networkDIContainer: NetworkerDIContainer
     }
     
@@ -34,7 +35,9 @@ public class RouteCoordinatorDIContainer {
                 .accountsViewController,
             aboutAccountViewModel: dependencies
                 .viewModelDIContainer
-                .accountsViewModel
+                .accountsViewModel,
+            viewDIContainer: dependencies.viewDIContainer
+            
         )
     }()
     

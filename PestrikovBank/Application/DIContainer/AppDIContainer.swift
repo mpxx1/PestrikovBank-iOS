@@ -56,6 +56,7 @@ public class AppDIContainer {
             dependencies: RouteCoordinatorDIContainer.Dependencies(
                 controllerDIContainer: viewControllerDIContainer,
                 viewModelDIContainer: viewModelDIContainer,
+                viewDIContainer: viewDIContainer,
                 networkDIContainer: NetworkerDIContainer()
             )
         )

@@ -9,91 +9,55 @@ import UIKit
 import Combine
 
 public struct ButtonComponentConfig {
-    let identifier: String
+    let id: String
     let title: String
     let buttonType: UIButton.ButtonType
     let uiControlState: UIControl.State
     let isEnabled: Bool
     let fontName: String
     let fontSize: CGFloat
-    let onDarkTextColor: UIColor
-    let onLightTextColor: UIColor
+    let color: ColorVariant
 }
 
-public struct ButtonComponent: Component {
-    public var identifier: String
-    public var view: UIView { buttonView }
-    private var buttonView: UIButton
-    private var cancellables = Set<AnyCancellable>()
-    private var config: ButtonComponentConfig
+public class ButtonComponent: UIButton, Component {
+    public var id: String
     
     init(
         config: ButtonComponentConfig
     ) {
-        self.identifier = config.identifier
+        self.id = config.id
+        super.init(frame: .zero)
         
-        let btn = UIButton(type: config.buttonType)
-        btn.setTitle(config.title, for: config.uiControlState)
-        btn.isEnabled = config.isEnabled
-        if UIScreen.main.traitCollection.userInterfaceStyle == .dark {
-            btn.tintColor = config.onDarkTextColor
-        } else {
-            btn.tintColor = config.onLightTextColor
-        }
-        btn.titleLabel!.font = UIFont(name: config.fontName, size: config.fontSize)
-        buttonView = btn
-        self.config = config
-    }
-    
-    public mutating func bind(to viewModel: AnyObject, of type: ViewModelType) {
-        switch type {
-        case .login:
-            guard let viewModel = viewModel as? LoginViewModel else { return }
-            
-            switch identifier {
-            case "login_button":
-                buttonView
-                    .publisher(for: .touchUpInside)
-                    .sink { _ in
-                        viewModel.submitLogin()
-                    }
-                    .store(in: &cancellables)
-                
-            case "signup_button":
-                buttonView
-                    .publisher(for: .touchUpInside)
-                    .sink { _ in
-                        viewModel.didTapSignUpButton()
-                    }
-                    .store(in: &cancellables)
-                
-            default:
-                fatalError("Unknown identifier \(identifier)")
-            }
-            
-        case .signUp:
-            guard let viewModel = viewModel as? SignUpViewModel else { return }
-            
-            switch identifier {
-            case "signup_button":
-                buttonView
-                    .publisher(for: .touchUpInside)
-                    .sink { _ in
-                        viewModel.submitSignUp()
-                    }
-                    .store(in: &cancellables)
-                
-            default:
-                fatalError("Unknown identifier \(identifier)")
-            }
+        self.setTitle(config.title, for: config.uiControlState)
+        self.isEnabled = config.isEnabled
+        
+        self.titleLabel!.font = UIFont(name: config.fontName, size: config.fontSize)
+        
+        switch config.color {
+        case .system: break
+        case .systemRed: tintColor = .systemRed
+        case .systemBlue: tintColor = .systemBlue
+        case .systemGreen: tintColor = .systemGreen
+        case .systemOrange: tintColor = .systemOrange
+        case .systemPurple: tintColor = .systemPurple
+        case .single(let color): tintColor = color
+        case .dynamic(onLight: let onLight, onDark: let onDark):
+            tintColor = dynColor(onLight: onLight, onDark: onDark)
         }
     }
     
-    public func switchTheme() {
-        if UIScreen.main.traitCollection.userInterfaceStyle == .dark {
-            buttonView.tintColor = config.onDarkTextColor
-        } else {
-            buttonView.tintColor = config.onLightTextColor
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    public func bind(to viewModel: ViewModelType) {
+        switch viewModel {
+        case .accountsViewModel(_):
+            break
         }
+    }
+    
+    public func setupConstraints(in container: UIView, preset: ConstraintPreset) {
+        setupConstraintsDefault(self, in: container, preset: preset)
     }
 }
