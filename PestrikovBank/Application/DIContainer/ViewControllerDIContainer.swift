@@ -40,8 +40,15 @@ public class ViewControllerDIContainer {
     }()
     
     lazy var accountDetailsViewController: UIViewController = {
-        return AccountDetailsViewControler(
+        return AccountDetailsViewController(
             viewModel: dependencies.modelDIContainer.accountsViewModel
+        )
+    }()
+    
+    lazy var dsAccountDetailsViewController: UIViewController = {
+        return DSAccountDetailsViewController(
+            viewModel: dependencies.modelDIContainer.accountsViewModel,
+            viewDIContainer: dependencies.viewDIContainer
         )
     }()
 }

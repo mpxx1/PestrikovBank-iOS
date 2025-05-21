@@ -7,10 +7,9 @@
 
 import UIKit
 
-public protocol Component {
-    var identifier: String { get }
-    var view: UIView { get }
+public protocol Component: UIView {
+    var id: String { get }
     
-    mutating func bind(to viewModel: AnyObject, of type: ViewModelType)
+    func bind(to viewModel: ViewModelType)
     func setupConstraints(in container: UIView, preset: ConstraintPreset)
 }

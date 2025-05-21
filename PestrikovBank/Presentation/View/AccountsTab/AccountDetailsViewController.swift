@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class AccountDetailsViewControler: UIViewController {
+public class AccountDetailsViewController: UIViewController {
     private let viewModel: AccountsViewModel
     private var form: AccountDetailsFormView!
 

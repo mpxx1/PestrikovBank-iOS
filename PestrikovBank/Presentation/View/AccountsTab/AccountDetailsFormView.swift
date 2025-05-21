@@ -193,7 +193,6 @@ public class AccountDetailsFormView: UIView {
                     self.created.isHidden = true
                     
                     let emptyLabel = UILabel()
-//                    emptyLabel.text = "No account selected"
                     emptyLabel.textAlignment = .center
                     emptyLabel.translatesAutoresizingMaskIntoConstraints = false
                     self.addSubview(emptyLabel)
@@ -221,8 +220,6 @@ public class AccountDetailsFormView: UIView {
                 }
             }
             .store(in: &cancellables)
-        
-        
     }
     
     private func setPlaceholderCardImage(for account: AccountImpl) {

@@ -11,13 +11,16 @@ public class AccountsTabCoordinator: RouteCoordinator {
     public var rootViewController: UIViewController = UINavigationController()
     public var childCoordinators = [UIViewController]()
     private var aboutAccountViewModel: AccountsViewModel
+    private var viewDIContainer: ViewDIContainer
     
     init(
         accountsViewController: UIViewController,
-        aboutAccountViewModel: AccountsViewModel
+        aboutAccountViewModel: AccountsViewModel,
+        viewDIContainer: ViewDIContainer
     ) {
         self.rootViewController = accountsViewController
         self.aboutAccountViewModel = aboutAccountViewModel
+        self.viewDIContainer = viewDIContainer
     }
     
     public func start() {
@@ -29,7 +32,7 @@ public class AccountsTabCoordinator: RouteCoordinator {
     }
     
     private func navigeteToAccountDetails() {
-        let detailsController = AccountDetailsViewControler(viewModel: aboutAccountViewModel)
+        let detailsController = DSAccountDetailsViewController(viewModel: aboutAccountViewModel, viewDIContainer: viewDIContainer)
         childCoordinators.append(detailsController)
         
         let navigation = UINavigationController(rootViewController: childCoordinators[0])

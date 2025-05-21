@@ -21,7 +21,6 @@ enum LoginNavigateTo {
 }
 
 public final class LoginViewModel: PhoneFormat {
-    
     private var cancellables: Set<AnyCancellable> = []
     private var phoneFormatter: PhoneFormat
     var onSignUpTapped = PassthroughSubject<LoginNavigateTo, Never>()
