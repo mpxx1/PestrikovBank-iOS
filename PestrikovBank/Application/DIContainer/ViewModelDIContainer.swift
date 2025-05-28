@@ -33,7 +33,7 @@ public class ViewModelDIContainer {
     }()
     
     lazy var accountsViewModel: AccountsViewModel = {
-        return AccountsViewModel(
+        return AccountsViewModelImpl(
             fetchAccountsUseCase: dependencies.useCasesDIContainer.fetchAccountsUseCase,
             fetchCardsUseCase: dependencies.useCasesDIContainer.fetchCardsUseCase
         )

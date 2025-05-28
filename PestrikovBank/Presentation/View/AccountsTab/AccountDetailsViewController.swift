@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import Combine
 
 public class AccountDetailsViewController: UIViewController {
     private let viewModel: AccountsViewModel
     private var form: AccountDetailsFormView!
+    private var cancellables = Set<AnyCancellable>()
 
     init(viewModel: AccountsViewModel) {
         self.viewModel = viewModel
@@ -23,12 +25,16 @@ public class AccountDetailsViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        bindViewModel()
+        viewModel.fetchCards()
     }
     
     private func setupView() {
         view.backgroundColor = .systemBackground
-        form = AccountDetailsFormView(frame: .zero, viewModel: viewModel)
+        
+        form = AccountDetailsFormView(frame: .zero)
         view.addSubview(form)
+        
         form.translatesAutoresizingMaskIntoConstraints = false
                 
         NSLayoutConstraint.activate([
@@ -37,5 +43,21 @@ public class AccountDetailsViewController: UIViewController {
             form.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             form.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+    }
+    
+    private func bindViewModel() {
+        viewModel
+            .selectedAccountPublisher
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] selectedAccount in
+                switch selectedAccount {
+                case .none:
+                    self?.form.isHidden = true
+                case .selected(let account):
+                    self?.form.isHidden = false
+                    self?.form.configure(with: account)
+                }
+            }
+            .store(in: &cancellables)
     }
 }

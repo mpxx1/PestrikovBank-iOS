@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol Card {
+public protocol Card {
     var id: String { get }  // card number
     var expireMonth: Int { get }
     var expireYear: Int { get }

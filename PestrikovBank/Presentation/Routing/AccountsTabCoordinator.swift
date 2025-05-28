@@ -32,7 +32,7 @@ public class AccountsTabCoordinator: RouteCoordinator {
     }
     
     private func navigeteToAccountDetails() {
-        let detailsController = DSAccountDetailsViewController(viewModel: aboutAccountViewModel, viewDIContainer: viewDIContainer)
+        let detailsController = AccountDetailsViewController(viewModel: aboutAccountViewModel)
         childCoordinators.append(detailsController)
         
         let navigation = UINavigationController(rootViewController: childCoordinators[0])
