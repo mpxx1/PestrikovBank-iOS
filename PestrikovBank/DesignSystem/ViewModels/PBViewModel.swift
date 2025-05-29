@@ -5,12 +5,10 @@
 //  Created by m on 28.05.2025.
 //
 
-import UIKit
-
 protocol PBViewModel {
     var id: String { get }
     var type: ComponentType { get }
-    var constraints: [NSLayoutConstraint] { get }
+    var layout: [LayoutConfig] { get }
 }
 
 enum ComponentType: String {

@@ -11,6 +11,12 @@ import Combine
 final class PBButton: UIButton, PBComponent {
     private var viewModel: ButtonViewModel?
     private var cancellables = Set<AnyCancellable>()
+    private var parentComponentDelegate: ParentComponentDelegate?
+    
+    init(parentComponent: ParentComponentDelegate?) {
+        super.init(frame: .zero)
+        self.parentComponentDelegate = parentComponent
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -41,7 +47,12 @@ final class PBButton: UIButton, PBComponent {
         guard let viewModel = viewModel else { return }
         
         self.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate(viewModel.constraints)
+        var constraints: [NSLayoutConstraint] = []
+        for layout in viewModel.layout {
+            let con = makeConstraints(self, parent: parentComponentDelegate, preset: layout)
+            con.forEach { constraints.append($0) }
+        }
+        NSLayoutConstraint.activate(constraints)
     }
     
     private func bindTapAction() {

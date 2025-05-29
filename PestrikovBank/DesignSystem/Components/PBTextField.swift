@@ -11,6 +11,12 @@ import Combine
 final class PBTextField: UITextField, PBComponent {
     private var viewModel: TextFieldViewModel?
     private var cancellables = Set<AnyCancellable>()
+    private var parentComponentDelegate: ParentComponentDelegate?
+    
+    init(parentComponent: ParentComponentDelegate?) {
+        super.init(frame: .zero)
+        self.parentComponentDelegate = parentComponent
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,7 +37,6 @@ final class PBTextField: UITextField, PBComponent {
         textColor = viewModel.textColor
         font = viewModel.font
         keyboardType = viewModel.keyboardType
-        returnKeyType = viewModel.returnKeyType
         isSecureTextEntry = viewModel.isSecureTextEntry
         autocapitalizationType = viewModel.autocapitalizationType
         
@@ -43,7 +48,12 @@ final class PBTextField: UITextField, PBComponent {
         guard let viewModel = viewModel else { return }
         
         self.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate(viewModel.constraints)
+        var constraints: [NSLayoutConstraint] = []
+        for layout in viewModel.layout {
+            let con = makeConstraints(self, parent: parentComponentDelegate, preset: layout)
+            con.forEach { constraints.append($0) }
+        }
+        NSLayoutConstraint.activate(constraints)
     }
     
     private func bindEditingChanged() {        
