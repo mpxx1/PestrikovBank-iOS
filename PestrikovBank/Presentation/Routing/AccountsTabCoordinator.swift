@@ -8,32 +8,41 @@
 import UIKit
 
 public class AccountsTabCoordinator: RouteCoordinator {
+    private var viewControllerDIContainer: ViewControllerDIContainer
+    
     public var rootViewController: UIViewController = UINavigationController()
     public var childCoordinators = [UIViewController]()
-    private var aboutAccountViewModel: AccountsViewModel
-    private var viewDIContainer: ViewDIContainer
     
     init(
-        accountsViewController: UIViewController,
-        aboutAccountViewModel: AccountsViewModel,
-        viewDIContainer: ViewDIContainer
+        viewControllerDIContainer: ViewControllerDIContainer,
     ) {
-        self.rootViewController = accountsViewController
-        self.aboutAccountViewModel = aboutAccountViewModel
-        self.viewDIContainer = viewDIContainer
+        self.rootViewController = viewControllerDIContainer.accountsViewController
+        self.viewControllerDIContainer = viewControllerDIContainer
     }
     
     public func start() {
         guard let accountsTabViewController = rootViewController as? AccountsViewController else { return }
         
         accountsTabViewController.onAccountTapped = { [weak self] in
-            self?.navigeteToAccountDetails()
+            guard let self = self else { return }
+            self
+                .navigateToController(
+                    self.viewControllerDIContainer.accountDetailsViewController
+                )
+        }
+        
+        accountsTabViewController.onUserDetailsTapped = { [weak self] in
+            guard let self = self else { return }
+            self
+                .navigateToController(
+                    self.viewControllerDIContainer.userDetailsViewController
+                )
         }
     }
     
-    private func navigeteToAccountDetails() {
-        let detailsController = AccountDetailsViewController(viewModel: aboutAccountViewModel)
-        childCoordinators.append(detailsController)
+    private func navigateToController(_ controller: UIViewController) {
+        childCoordinators.removeAll()
+        childCoordinators.append(controller)
         
         let navigation = UINavigationController(rootViewController: childCoordinators[0])
         navigation.modalPresentationStyle = .pageSheet
