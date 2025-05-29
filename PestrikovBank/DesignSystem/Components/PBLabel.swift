@@ -9,6 +9,12 @@ import UIKit
 
 final class PBLabel: UILabel, PBComponent {
     private var viewModel: LabelViewModel?
+    private var parentComponentDelegate: ParentComponentDelegate?
+    
+    init(parentComponent: ParentComponentDelegate?) {
+        super.init(frame: .zero)
+        self.parentComponentDelegate = parentComponent
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -37,6 +43,11 @@ final class PBLabel: UILabel, PBComponent {
         guard let viewModel = viewModel else { return }
         
         self.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate(viewModel.constraints)
+        var constraints: [NSLayoutConstraint] = []
+        for layout in viewModel.layout {
+            let con = makeConstraints(self, parent: parentComponentDelegate, preset: layout)
+            con.forEach { constraints.append($0) }
+        }
+        NSLayoutConstraint.activate(constraints)
     }
 }

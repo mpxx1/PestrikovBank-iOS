@@ -10,7 +10,7 @@ import UIKit
 struct LabelViewModel: PBViewModel {
     let id: String
     let type: ComponentType = .label
-    let constraints: [NSLayoutConstraint]
+    let layout: [LayoutConfig]
     
     let text: String
     let textColor: UIColor
@@ -20,7 +20,7 @@ struct LabelViewModel: PBViewModel {
     
     init(
         id: String,
-        constraints: [NSLayoutConstraint],
+        layout: [LayoutConfig],
         text: String,
         textColor: UIColor = .black,
         font: UIFont = .systemFont(ofSize: 16),
@@ -28,7 +28,7 @@ struct LabelViewModel: PBViewModel {
         numberOfLines: Int = 1
     ) {
         self.id = id
-        self.constraints = constraints
+        self.layout = layout
         self.text = text
         self.textColor = textColor
         self.font = font

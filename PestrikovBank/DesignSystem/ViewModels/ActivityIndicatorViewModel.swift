@@ -10,7 +10,7 @@ import UIKit
 struct ActivityIndicatorViewModel: PBViewModel {
     let id: String
     let type: ComponentType = .activityIndicator
-    let constraints: [NSLayoutConstraint]
+    let layout: [LayoutConfig]
     
     let hidesWhenStopped: Bool
     let color: UIColor
@@ -24,7 +24,7 @@ struct ActivityIndicatorViewModel: PBViewModel {
         onLightColor: UIColor,
         style: UIActivityIndicatorView.Style,
         isActive: Bool,
-        constraints: [NSLayoutConstraint]
+        layout: [LayoutConfig]
     ) {
         self.id = id
         self.hidesWhenStopped = hidesWhenStopped
@@ -37,6 +37,6 @@ struct ActivityIndicatorViewModel: PBViewModel {
         }
         self.style = style
         self.isActive = isActive
-        self.constraints = constraints
+        self.layout = layout
     }
 }

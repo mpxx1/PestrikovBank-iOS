@@ -10,26 +10,26 @@ import UIKit
 struct StackViewModel: PBViewModel {
     let id: String
     let type: ComponentType = .stack
-    let constraints: [NSLayoutConstraint]
+    let layout: [LayoutConfig]
     
     let axis: NSLayoutConstraint.Axis
     let alignment: UIStackView.Alignment
     let distribution: UIStackView.Distribution
     let spacing: CGFloat
     
-    let components: [PBComponent]
+    let components: [PBViewModel]
     
     init(
         id: String,
-        constraints: [NSLayoutConstraint],
+        layout: [LayoutConfig],
         axis: NSLayoutConstraint.Axis = .vertical,
         alignment: UIStackView.Alignment = .fill,
         distribution: UIStackView.Distribution = .fill,
         spacing: CGFloat = 0,
-        components: [PBComponent]
+        components: [PBViewModel]
     ) {
         self.id = id
-        self.constraints = constraints
+        self.layout = layout
         self.alignment = alignment
         self.axis = axis
         self.distribution = distribution

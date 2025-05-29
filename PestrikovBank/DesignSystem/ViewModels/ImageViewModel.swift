@@ -10,7 +10,7 @@ import UIKit
 struct ImageViewModel: PBViewModel {
     let id: String
     let type: ComponentType = .image
-    let constraints: [NSLayoutConstraint]
+    let layout: [LayoutConfig]
     
     let imageType: ImageType
     let size: CGSize
@@ -19,7 +19,7 @@ struct ImageViewModel: PBViewModel {
     
     init(
         id: String,
-        constraints: [NSLayoutConstraint],
+        layout: [LayoutConfig],
         imageType: ImageType,
         size: CGSize,
         contentMode: UIView.ContentMode = .scaleAspectFit,
@@ -27,7 +27,7 @@ struct ImageViewModel: PBViewModel {
         cornerRadius: CGFloat = 0,
     ) {
         self.id = id
-        self.constraints = constraints
+        self.layout = layout
         self.imageType = imageType
         self.size = size
         self.contentMode = contentMode
@@ -35,8 +35,9 @@ struct ImageViewModel: PBViewModel {
     }
 }
 
-public enum ImageType {
+public enum ImageType: Codable {
     case local(String)
+    case data(Data)
     case red
     case blue
     case green

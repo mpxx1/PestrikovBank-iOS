@@ -11,7 +11,7 @@ import Combine
 struct ButtonViewModel: PBViewModel {
     let id: String
     let type: ComponentType = .button
-    let constraints: [NSLayoutConstraint]
+    let layout: [LayoutConfig]
     
     let title: String
     let titleColor: UIColor
@@ -23,7 +23,7 @@ struct ButtonViewModel: PBViewModel {
         
     init(
         id: String,
-        constraints: [NSLayoutConstraint],
+        layout: [LayoutConfig],
         title: String,
         titleColor: UIColor = .white,
         backgroundColor: UIColor = .systemRed,
@@ -33,7 +33,7 @@ struct ButtonViewModel: PBViewModel {
         tapAction: (() -> Void)? = nil
     ) {
         self.id = id
-        self.constraints = constraints
+        self.layout = layout
         self.title = title
         self.titleColor = titleColor
         self.backgroundColor = backgroundColor

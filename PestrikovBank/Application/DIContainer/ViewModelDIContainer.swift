@@ -19,6 +19,8 @@ public class ViewModelDIContainer {
         self.dependencies = dependencies
     }
     
+    lazy var models: [String:ClosureStorage] = [:]
+    
     lazy var loginViewModel: LoginViewModel = {
         return LoginViewModel(
             phoneFromat: dependencies.phoneFormatter
