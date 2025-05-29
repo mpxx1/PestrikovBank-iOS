@@ -13,7 +13,7 @@ struct TextFieldViewModelConfig: Codable {
     let keyboardType: KeyboardType
     let isSecureTextEntry: Bool
     let autocapitalizationType: TextAutocapitalizationType
-    let closureKey: ClosureKey
+    let closureKey: String?
     let layout: [LayoutConfig]
 }
 

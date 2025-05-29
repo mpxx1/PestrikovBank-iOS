@@ -9,7 +9,7 @@ import UIKit
 
 final class PBImage: UIImageView, PBComponent {
     private var viewModel: ImageViewModel?
-    private var parentComponentDelegate: ParentComponentDelegate?
+    private weak var parentComponentDelegate: ParentComponentDelegate?
     
     init(parentComponent: ParentComponentDelegate?) {
         super.init(frame: .zero)
@@ -47,20 +47,6 @@ final class PBImage: UIImageView, PBComponent {
         case .purple:
             image = createColoredImage(size: viewModel.size, color: .systemPurple)
         }
-        
-        setupLayout()
-    }
-    
-    private func setupLayout() {
-        guard let viewModel = viewModel else { return }
-        
-        self.translatesAutoresizingMaskIntoConstraints = false
-        var constraints: [NSLayoutConstraint] = []
-        for layout in viewModel.layout {
-            let con = makeConstraints(self, parent: parentComponentDelegate, preset: layout)
-            con.forEach { constraints.append($0) }
-        }
-        NSLayoutConstraint.activate(constraints)
     }
     
     private func createColoredImage(size: CGSize, color: UIColor) -> UIImage {

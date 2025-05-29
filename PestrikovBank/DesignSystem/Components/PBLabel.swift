@@ -9,7 +9,7 @@ import UIKit
 
 final class PBLabel: UILabel, PBComponent {
     private var viewModel: LabelViewModel?
-    private var parentComponentDelegate: ParentComponentDelegate?
+    private weak var parentComponentDelegate: ParentComponentDelegate?
     
     init(parentComponent: ParentComponentDelegate?) {
         super.init(frame: .zero)
@@ -35,19 +35,5 @@ final class PBLabel: UILabel, PBComponent {
         font = viewModel.font
         textAlignment = viewModel.textAlignment
         numberOfLines = viewModel.numberOfLines
-        
-        setupLayout()
-    }
-    
-    private func setupLayout() {
-        guard let viewModel = viewModel else { return }
-        
-        self.translatesAutoresizingMaskIntoConstraints = false
-        var constraints: [NSLayoutConstraint] = []
-        for layout in viewModel.layout {
-            let con = makeConstraints(self, parent: parentComponentDelegate, preset: layout)
-            con.forEach { constraints.append($0) }
-        }
-        NSLayoutConstraint.activate(constraints)
     }
 }

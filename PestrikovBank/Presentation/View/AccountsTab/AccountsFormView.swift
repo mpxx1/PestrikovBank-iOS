@@ -12,6 +12,7 @@ public final class AccountsFormView: UIView {
     private let tableViewDelegate: AccountsFormViewDelegate
     private let tableViewDataSource: AccountsFormViewDataSource
     private weak var eventHandler: AccountsFormViewEventHandling?
+    private var cancellables = Set<AnyCancellable>()
     
     private let scrollView = UIScrollView()
     private let contentStackView = UIStackView()
@@ -115,5 +116,12 @@ public final class AccountsFormView: UIView {
             activityIndicator.centerXAnchor.constraint(equalTo: centerXAnchor),
             activityIndicator.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
+        
+        title
+            .publisher(for: .touchUpInside)
+            .sink { [weak self] _ in
+                self?.eventHandler?.didTapUserDetails()
+            }
+            .store(in: &cancellables)
     }
 }

@@ -11,6 +11,7 @@ public class ViewControllerDIContainer {
     struct Dependencies {
         let viewDIContainer: ViewDIContainer
         let modelDIContainer: ViewModelDIContainer
+        let mapper: PBMapper
     }
     
     private let dependencies: Dependencies
@@ -45,10 +46,11 @@ public class ViewControllerDIContainer {
         )
     }()
     
-//    lazy var dsAccountDetailsViewController: UIViewController = {
-//        return DSAccountDetailsViewController(
-//            viewModel: dependencies.modelDIContainer.accountsViewModel,
-//            viewDIContainer: dependencies.viewDIContainer
-//        )
-//    }()
+    lazy var userDetailsViewController: UIViewController = {
+        return BDUIDefaultViewController(
+            viewModel: dependencies.modelDIContainer.bduiDefaultViewModel,
+            mapper: dependencies.mapper,
+            endpoint: "/bdui/screen-config/user-details"
+        )
+    }()
 }

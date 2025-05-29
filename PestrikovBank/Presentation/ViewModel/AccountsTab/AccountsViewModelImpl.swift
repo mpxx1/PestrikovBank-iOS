@@ -24,8 +24,6 @@ public class AccountsViewModelImpl: AccountsViewModel {
     @Published public var selectedAccount: SelectedAccount = .none
     
     public var onAccountTapped: PassthroughSubject<AccountsNavigateTo, Never> = .init()
-//    public var selectedAccountPublisher = PassthroughSubject<SelectedAccount, Never>()
-//    public var accountsLoadingStatePublisher = PassthroughSubject<UserAccountsLoadingState, Error>()
     
     init(
         fetchAccountsUseCase: FetchAccountsUseCase,
@@ -114,8 +112,6 @@ public class AccountsViewModelImpl: AccountsViewModel {
         selectedAccount = .selected(account)
         onAccountTapped.send(.selectedAccount)
     }
-    
-//    public func loadCardImage() {} // todo rx: url -> UIImage
     
     private enum Caller {
         case accounts

@@ -13,6 +13,7 @@ public class RouteCoordinatorDIContainer {
         let viewModelDIContainer: ViewModelDIContainer
         let viewDIContainer: ViewDIContainer
         let networkDIContainer: NetworkerDIContainer
+        let mapper: PBMapper
     }
     
     private let dependencies: Dependencies
@@ -30,14 +31,7 @@ public class RouteCoordinatorDIContainer {
     
     lazy var accountsTabCoordinator: RouteCoordinator = {
         return AccountsTabCoordinator(
-            accountsViewController: dependencies
-                .controllerDIContainer
-                .accountsViewController,
-            aboutAccountViewModel: dependencies
-                .viewModelDIContainer
-                .accountsViewModel,
-            viewDIContainer: dependencies.viewDIContainer
-            
+            viewControllerDIContainer: dependencies.controllerDIContainer
         )
     }()
     

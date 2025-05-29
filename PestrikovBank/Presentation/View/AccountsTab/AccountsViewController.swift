@@ -14,6 +14,7 @@ final class AccountsViewController: UIViewController {
     private var cancellables = Set<AnyCancellable>()
     
     var onAccountTapped: (() -> Void)?
+    var onUserDetailsTapped: (() -> Void)?
 
     init(viewModel: AccountsViewModel) {
         self.viewModel = viewModel
@@ -83,7 +84,7 @@ final class AccountsViewController: UIViewController {
 
 extension AccountsViewController: AccountsFormViewEventHandling {
     func didTapUserDetails() {
-        // unimplemented
+        onUserDetailsTapped?()
     }
 
     func didSelectAccount(at index: Int) {

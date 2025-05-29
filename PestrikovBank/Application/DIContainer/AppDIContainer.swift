@@ -12,6 +12,10 @@ public class AppDIContainer {
     lazy var appConfiguration = AppConfig()
     lazy var jsonEncoder = JSONEncoder()
     
+    lazy var actionsDIContainer: ActionsDIContainer = {
+        return ActionsDIContainer()
+    }()
+    
     lazy var networkerFactory: NetworkerDIContainer = {
         return NetworkerDIContainer()
     }()
@@ -46,7 +50,8 @@ public class AppDIContainer {
         return ViewControllerDIContainer(
             dependencies: ViewControllerDIContainer.Dependencies(
                 viewDIContainer: viewDIContainer,
-                modelDIContainer: viewModelDIContainer
+                modelDIContainer: viewModelDIContainer,
+                mapper: dsMapper
             )
         )
     }()
@@ -57,8 +62,13 @@ public class AppDIContainer {
                 controllerDIContainer: viewControllerDIContainer,
                 viewModelDIContainer: viewModelDIContainer,
                 viewDIContainer: viewDIContainer,
-                networkDIContainer: NetworkerDIContainer()
+                networkDIContainer: networkerFactory,
+                mapper: dsMapper
             )
         )
+    }()
+    
+    lazy var dsMapper: PBMapper = {
+        return PBMapperImpl(actionsDIContainer: actionsDIContainer)
     }()
 }

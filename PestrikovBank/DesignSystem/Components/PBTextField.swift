@@ -11,7 +11,7 @@ import Combine
 final class PBTextField: UITextField, PBComponent {
     private var viewModel: TextFieldViewModel?
     private var cancellables = Set<AnyCancellable>()
-    private var parentComponentDelegate: ParentComponentDelegate?
+    private weak var parentComponentDelegate: ParentComponentDelegate?
     
     init(parentComponent: ParentComponentDelegate?) {
         super.init(frame: .zero)
@@ -40,20 +40,7 @@ final class PBTextField: UITextField, PBComponent {
         isSecureTextEntry = viewModel.isSecureTextEntry
         autocapitalizationType = viewModel.autocapitalizationType
         
-        setupLayout()
         bindEditingChanged()
-    }
-    
-    private func setupLayout() {
-        guard let viewModel = viewModel else { return }
-        
-        self.translatesAutoresizingMaskIntoConstraints = false
-        var constraints: [NSLayoutConstraint] = []
-        for layout in viewModel.layout {
-            let con = makeConstraints(self, parent: parentComponentDelegate, preset: layout)
-            con.forEach { constraints.append($0) }
-        }
-        NSLayoutConstraint.activate(constraints)
     }
     
     private func bindEditingChanged() {        

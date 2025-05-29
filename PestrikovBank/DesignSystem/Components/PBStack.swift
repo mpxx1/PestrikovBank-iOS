@@ -10,7 +10,7 @@ import UIKit
 final class PBStack: UIStackView, PBComponent {
     private var viewModel: StackViewModel?
     private var components: [String:PBComponent] = [:]    
-    private var parentComponentDelegate: ParentComponentDelegate?
+    private weak var parentComponentDelegate: ParentComponentDelegate?
     
     init(parentComponent: ParentComponentDelegate?) {
         super.init(frame: .zero)
@@ -49,6 +49,17 @@ final class PBStack: UIStackView, PBComponent {
                 let component = mapViewModelToComponent(componentViewModel)
                 components[componentViewModel.id] = component
                 addArrangedSubview(component)
+                
+                component.translatesAutoresizingMaskIntoConstraints = false
+                
+                var constraints = [NSLayoutConstraint]()
+                componentViewModel
+                    .layout
+                    .forEach { layout in
+                        let con = makeConstraints(component, parent: parentComp(), preset: layout)
+                        con.forEach { constraints.append($0) }
+                    }
+                NSLayoutConstraint.activate(constraints)
             }
     }
     

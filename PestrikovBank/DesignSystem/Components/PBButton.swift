@@ -11,7 +11,7 @@ import Combine
 final class PBButton: UIButton, PBComponent {
     private var viewModel: ButtonViewModel?
     private var cancellables = Set<AnyCancellable>()
-    private var parentComponentDelegate: ParentComponentDelegate?
+    private weak var parentComponentDelegate: ParentComponentDelegate?
     
     init(parentComponent: ParentComponentDelegate?) {
         super.init(frame: .zero)
@@ -39,20 +39,7 @@ final class PBButton: UIButton, PBComponent {
         layer.cornerRadius = viewModel.cornerRadius
         isEnabled = viewModel.isEnabled
         
-        setupLayout()
         bindTapAction()
-    }
-    
-    private func setupLayout() {
-        guard let viewModel = viewModel else { return }
-        
-        self.translatesAutoresizingMaskIntoConstraints = false
-        var constraints: [NSLayoutConstraint] = []
-        for layout in viewModel.layout {
-            let con = makeConstraints(self, parent: parentComponentDelegate, preset: layout)
-            con.forEach { constraints.append($0) }
-        }
-        NSLayoutConstraint.activate(constraints)
     }
     
     private func bindTapAction() {

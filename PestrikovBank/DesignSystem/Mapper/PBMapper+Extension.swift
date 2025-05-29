@@ -8,14 +8,52 @@
 import UIKit
 import Combine
 
-struct PBMapper {
-    private let viewModelDIContainer: ViewModelDIContainer
+protocol PBMapper {
+    func mapConfig(_ config: ComponentConfig) -> UIView
+}
+
+struct PBMapperImpl: PBMapper {
+    private let actionsDIContainer: ActionsDIContainer
     
-    init(ViewModelDIContainer: ViewModelDIContainer) {
-        self.viewModelDIContainer = ViewModelDIContainer
+    init(actionsDIContainer: ActionsDIContainer) {
+        self.actionsDIContainer = actionsDIContainer
     }
     
-    func mapConfig(_ config: ComponentConfig) -> PBViewModel {
+    func mapConfig(_ config: ComponentConfig) -> UIView {
+        let viewModel = configToViewModel(config)
+        return viewModelToView(viewModel)
+    }
+    
+    private func viewModelToView(_ viewModel: PBViewModel) -> UIView {
+        switch viewModel.type {
+        case .stack:
+            let component = PBStack(frame: .zero)
+            component.configure(with: viewModel)
+            return component
+        case .activityIndicator:
+            let component = PBActivityIndicator(frame: .zero)
+            component.configure(with: viewModel)
+            return component
+        case .label:
+            let component = PBLabel(frame: .zero)
+            component.configure(with: viewModel)
+            return component
+        case .button:
+            let component = PBButton(frame: .zero)
+            component.configure(with: viewModel)
+            return component
+        case .image:
+            let component = PBImage(frame: .zero)
+            component.configure(with: viewModel)
+            return component
+        case .textField:
+            let component = PBTextField(frame: .zero)
+            component.configure(with: viewModel)
+            return component
+        }
+    }
+    
+    private func configToViewModel(_ config: ComponentConfig) -> PBViewModel {
         switch config {
         case .stack(let stackConfig):
             return mapStackConfig(stackConfig)
@@ -31,7 +69,7 @@ struct PBMapper {
     }
 
     private func mapStackConfig(_ config: StackViewModelConfig) -> StackViewModel {
-        let components = config.components.map { mapConfig($0) }
+        let components = config.components.map { configToViewModel($0) }
         
         return StackViewModel(
             id: config.id,
@@ -68,6 +106,18 @@ struct PBMapper {
     }
 
     private func mapButtonConfig(_ config: ButtonViewModelConfig) -> ButtonViewModel {
+        if let closureKey = config.closureKey {
+            let tapAction: () -> Void = {
+                NotificationCenter.default.post(
+                    name: NSNotification.Name(closureKey),
+                    object: nil,
+                    userInfo: ["button_id": config.id]
+                )
+            }
+
+            actionsDIContainer.registerVoidAction(name: closureKey, action: tapAction)
+        }
+        
         return ButtonViewModel(
             id: config.id,
             layout: config.layout,
@@ -77,11 +127,26 @@ struct PBMapper {
             cornerRadius: config.cornerRadius,
             font: mapFontConfig(config.font),
             isEnabled: config.isEnabled,
-            tapAction: extractClosure(with: config.closureKey) as? () -> Void
+            tapAction: config.closureKey != nil
+                ? actionsDIContainer.getVoidAction(name: config.closureKey!)
+                : nil
         )
     }
 
     private func mapTextFieldConfig(_ config: TextFieldViewModelConfig) -> TextFieldViewModel {
+        let onEditChanged: ((String) -> Void)? = config.closureKey != nil
+            ? { text in
+                NotificationCenter.default.post(
+                    name: NSNotification.Name(config.closureKey!),   // "didChangeTextField"
+                    object: nil,
+                    userInfo: ["field_id": config.id, "text": text]
+                )
+            }
+            : nil
+        config.closureKey != nil
+            ? actionsDIContainer.registerStringAction(name: config.closureKey!, action: onEditChanged!)
+            : ()
+        
         return TextFieldViewModel(
             id: config.id,
             layout: config.layout,
@@ -91,12 +156,10 @@ struct PBMapper {
             keyboardType: mapKeyboardType(config.keyboardType),
             isSecureTextEntry: config.isSecureTextEntry,
             autocapitalizationType: mapAutocapitalizationType(config.autocapitalizationType),
-            onEditChanged: extractClosure(with: config.closureKey) as? (String) -> Void
+            onEditChanged: config.closureKey != nil
+                ? actionsDIContainer.getStringAction(name: config.closureKey!)
+                : nil
         )
-    }
-    
-    private func extractClosure(with config: ClosureKey) -> Any? {
-        return viewModelDIContainer.models[config.viewModel]?.cancellables[config.closure]
     }
 
     private func mapStackAxis(_ axis: StackAxis) -> NSLayoutConstraint.Axis {
