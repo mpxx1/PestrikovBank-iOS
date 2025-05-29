@@ -8,10 +8,7 @@
 import UIKit
 import Combine
 
-public class AboutAccountFormView: UIView {
-    private var viewModel: AccountsViewModel
-    private var cancellables = Set<AnyCancellable>()
-    
+public class AccountDetailsFormView: UIView {
     public var title: UILabel = {
         let label = UILabel()
         label.text = "Details"
@@ -97,12 +94,9 @@ public class AboutAccountFormView: UIView {
         return indicator
     }()
     
-    init(frame: CGRect, viewModel: AccountsViewModel) {
-        self.viewModel = viewModel
+    override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
-        bindViewModel()
-        viewModel.fetchCards()
     }
     
     required init?(coder: NSCoder) {
@@ -176,53 +170,24 @@ public class AboutAccountFormView: UIView {
         ])
     }
     
-    private func bindViewModel() {
-        viewModel
-            .$selectedAccount
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] selectedAccount in
-                guard let self = self else { return }
-                
-                switch selectedAccount {
-                case .none:
-                    self.activityIndicator.startAnimating()
-                    self.cardImageView.isHidden = true
-                    self.accountId.isHidden = true
-                    self.amount.isHidden = true
-                    self.type.isHidden = true
-                    self.created.isHidden = true
-                    
-                    let emptyLabel = UILabel()
-//                    emptyLabel.text = "No account selected"
-                    emptyLabel.textAlignment = .center
-                    emptyLabel.translatesAutoresizingMaskIntoConstraints = false
-                    self.addSubview(emptyLabel)
-                    NSLayoutConstraint.activate([
-                        emptyLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-                        emptyLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor)
-                    ])
-                    
-                case .selected(let account):
-                    self.activityIndicator.stopAnimating()
-                    self.cardImageView.isHidden = false
-                    self.accountId.isHidden = false
-                    self.amount.isHidden = false
-                    self.type.isHidden = false
-                    self.created.isHidden = false
-                    
-                    self.accountId.text = "ID: \(account.id)"
-                    self.amount.text = "\(account.amount) £"
-                    self.type.text = account.variant.rawValue.capitalized
-                    let formatter = DateFormatter()
-                    formatter.dateStyle = .medium
-                    self.created.text = formatter.string(from: account.createdAt)
-                    
-                    self.setPlaceholderCardImage(for: account)
-                }
-            }
-            .store(in: &cancellables)
+    public func configure(with account: Account) {
+        activityIndicator.stopAnimating()
+        cardImageView.isHidden = false
+        accountId.isHidden = false
+        amount.isHidden = false
+        type.isHidden = false
+        created.isHidden = false
         
+        accountId.text = "ID: \(account.id)"
+        amount.text = "\(account.amount) £"
+        type.text = account.variant.rawValue.capitalized
         
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        created.text = formatter.string(from: account.createdAt)
+        
+        let color = getCardColor(for: account.variant)
+        cardImageView.image = createColoredImage(size: CGSize(width: 300, height: 180), color: color, digits: String(format: "%04d", account.id))
     }
     
     private func setPlaceholderCardImage(for account: AccountImpl) {

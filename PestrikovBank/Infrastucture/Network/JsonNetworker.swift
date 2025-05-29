@@ -21,11 +21,7 @@ final class JsonNetworker: Networker {
         client
             .send(endpoint.makeRequest())
             .tryMap { data, response in
-                guard let httpResponse = response as? HTTPURLResponse else {
-                    throw PBError.invalidResponse
-                }
-                
-                if 200..<300 ~= httpResponse.statusCode {
+                if 200..<300 ~= response.statusCode {
                     return data
                 } else {
                     do {
@@ -39,8 +35,6 @@ final class JsonNetworker: Networker {
             .decode(type: T.self, decoder: jsonDecoder)
             .mapError { error -> Error in
                 
-                print(error) // возникает ошибка
-
                 if let decodingError = error as? DecodingError {
                     return PBError.network(decodingError)
                 }

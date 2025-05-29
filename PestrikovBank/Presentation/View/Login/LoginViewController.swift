@@ -10,8 +10,9 @@ import Combine
 
 public final class LoginViewController: UIViewController {
     
-    private var loginForm: LoginFormView
+    private var loginForm: LoginFormView!
     private var viewModel: LoginViewModel
+    private var viewDiContainer: ViewDIContainer
     private var cancellables = Set<AnyCancellable>()
     
     private let backgroundImageView: UIImageView = {
@@ -23,8 +24,8 @@ public final class LoginViewController: UIViewController {
     
     public var onSignUpTapped: (() -> Void)?
     
-    init(loginForm: LoginFormView, viewModel: LoginViewModel) {
-        self.loginForm = loginForm
+    init(viewDIContainer: ViewDIContainer, viewModel: LoginViewModel) {
+        self.viewDiContainer = viewDIContainer
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -35,6 +36,8 @@ public final class LoginViewController: UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.loginForm = viewDiContainer.loginForm
         
         backgroundImageView.frame = view.bounds
         view.addSubview(backgroundImageView)

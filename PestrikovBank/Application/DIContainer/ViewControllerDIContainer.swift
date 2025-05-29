@@ -21,14 +21,14 @@ public class ViewControllerDIContainer {
     
     lazy var loginViewController: UIViewController = {
         return LoginViewController(
-            loginForm: dependencies.viewDIContainer.loginForm,
+            viewDIContainer: dependencies.viewDIContainer,
             viewModel: dependencies.modelDIContainer.loginViewModel
         )
     }()
     
     lazy var signUpViewController: SignUpViewController = {
         return SignUpViewController(
-            signUpForm: dependencies.viewDIContainer.signUpForm,
+            viewDIContainer: dependencies.viewDIContainer,
             signUpViewModel: dependencies.modelDIContainer.signUpViewModel
         )
     }()
@@ -40,8 +40,15 @@ public class ViewControllerDIContainer {
     }()
     
     lazy var accountDetailsViewController: UIViewController = {
-        return AboutAccountViewControler(
+        return AccountDetailsViewController(
             viewModel: dependencies.modelDIContainer.accountsViewModel
         )
     }()
+    
+//    lazy var dsAccountDetailsViewController: UIViewController = {
+//        return DSAccountDetailsViewController(
+//            viewModel: dependencies.modelDIContainer.accountsViewModel,
+//            viewDIContainer: dependencies.viewDIContainer
+//        )
+//    }()
 }

@@ -12,10 +12,10 @@ public struct Cards: Codable {
 }
 
 public struct CardImpl: Card, Codable {
-    var id: String
-    var expireMonth: Int
-    var expireYear: Int
-    var designUrl: String
+    public let id: String
+    public let expireMonth: Int
+    public let expireYear: Int
+    public let designUrl: String
     
     enum CodingKeys: String, CodingKey {
         case id
