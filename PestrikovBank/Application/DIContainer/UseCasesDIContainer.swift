@@ -41,7 +41,10 @@ final class UseCasesDIContainer {
         )
     }()
 
-//    lazy var fetchTransactionsUseCase: FetchTransactionsUseCase = {
-//    
-//    }()
+    lazy var loadScreenConfigUseCase: LoadScreenConfigUseCase = {
+        return LoadScreenConfigUseCaseImpl(
+            networkerDI: dependencies.networkerDI,
+            encoder: dependencies.jsonEncoder
+        )
+    }()
 }

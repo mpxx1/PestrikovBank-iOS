@@ -6,7 +6,7 @@
 //
 
 final class ParentComponentDelegate {
-    weak var delegate: ParentComponent?
+    var delegate: ParentComponent?
     
     init(parentComponent: ParentComponent?) {
         self.delegate = parentComponent

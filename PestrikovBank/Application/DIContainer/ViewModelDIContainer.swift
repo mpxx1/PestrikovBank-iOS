@@ -19,8 +19,6 @@ public class ViewModelDIContainer {
         self.dependencies = dependencies
     }
     
-    lazy var models: [String:ClosureStorage] = [:]
-    
     lazy var loginViewModel: LoginViewModel = {
         return LoginViewModel(
             phoneFromat: dependencies.phoneFormatter
@@ -38,6 +36,12 @@ public class ViewModelDIContainer {
         return AccountsViewModelImpl(
             fetchAccountsUseCase: dependencies.useCasesDIContainer.fetchAccountsUseCase,
             fetchCardsUseCase: dependencies.useCasesDIContainer.fetchCardsUseCase
+        )
+    }()
+    
+    lazy var bduiDefaultViewModel: BDUIDefaultViewModel = {
+        return BDUIDefaultViewModel(
+            loadScreenConfigUseCase: dependencies.useCasesDIContainer.loadScreenConfigUseCase
         )
     }()
 }

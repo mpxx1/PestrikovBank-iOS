@@ -15,11 +15,6 @@ struct ButtonViewModelConfig: Codable {
     let cornerRadius: CGFloat
     let font: SystemFontConfig
     let isEnabled: Bool
-    let closureKey: ClosureKey
+    let closureKey: String?
     let layout: [LayoutConfig]
-}
-
-struct ClosureKey: Codable {
-    let viewModel: String
-    let closure: String
 }

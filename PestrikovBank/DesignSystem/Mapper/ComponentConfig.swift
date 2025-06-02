@@ -12,3 +12,7 @@ enum ComponentConfig: Codable {
     case button(ButtonViewModelConfig)
     case textField(TextFieldViewModelConfig)
 }
+
+struct ScreenConfig: Codable {
+    let view: ComponentConfig
+}
